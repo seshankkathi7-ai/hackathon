@@ -1,0 +1,3953 @@
+{
+  "meta": {
+    "version": "2.0",
+    "data_status": "SAMPLE DATA — All quantities, product names, doses and prices are illustrative placeholders only. Do NOT follow them as agronomic advice. Consult a local agronomist, Krishi Vigyan Kendra (KVK), or your State Agriculture Department before applying any input.",
+    "last_updated": "2026-10-13",
+    "stage_list": [
+      "land_preparation",
+      "seed_selection",
+      "sowing",
+      "fertilizer_application",
+      "irrigation",
+      "weed_management",
+      "pest_disease_monitoring",
+      "crop_growth_monitoring",
+      "harvesting",
+      "post_harvest_handling",
+      "selling_produce"
+    ],
+    "task_schema": {
+      "task_name": "string",
+      "timing": "string — when in crop cycle this task occurs",
+      "purpose": "string — why this task is done",
+      "instructions": "array of strings — numbered step-by-step actions",
+      "materials": "array of { item, quantity, unit, note }",
+      "frequency": "string or null",
+      "application_method": "string or null",
+      "estimated_cost": "{ amount: string, currency: 'INR', per: string, note: string }",
+      "safety_precautions": "array of strings",
+      "information_source": "string"
+    }
+  },
+  "seasons": {
+    "Kharif": {
+      "description": "Monsoon season (June – October)",
+      "color": "#2196F3"
+    },
+    "Rabi": {
+      "description": "Winter season (October – March)",
+      "color": "#FF9800"
+    },
+    "Zaid": {
+      "description": "Summer season (March – June)",
+      "color": "#4CAF50"
+    }
+  },
+  "months": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
+  "crops": [
+    {
+      "id": 1,
+      "name": "Wheat",
+      "season": "Rabi",
+      "sowing_month": 10,
+      "harvesting_month": 3,
+      "duration_days": 150,
+      "water_need": "Medium",
+      "soil_type": "Loamy",
+      "color": "#f5c518",
+      "short_description": "Wheat is the most important Rabi cereal crop grown across North and Central India.",
+      "stages": {
+        "land_preparation": {
+          "stage_number": 1,
+          "stage_name": "Land Preparation",
+          "tasks": [
+            {
+              "task_name": "Deep Ploughing",
+              "timing": "September – early October, 3–4 weeks before sowing",
+              "purpose": "Break compacted subsoil, improve aeration and water infiltration, expose soil-borne pests to sunlight.",
+              "instructions": [
+                "1. Allow the field to dry adequately after the previous Kharif crop.",
+                "2. Attach a mould-board or disc plough to a 35–45 HP tractor.",
+                "3. Plough to a depth of 20–25 cm across the full field length.",
+                "4. Cross-plough perpendicular to the first pass for uniform soil break-up.",
+                "5. Leave the field open for 10–15 days to allow sun-drying and pest exposure."
+              ],
+              "materials": [
+                {
+                  "item": "Tractor (35–45 HP)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "machine",
+                  "note": "May be hired locally"
+                },
+                {
+                  "item": "Mould-board or disc plough",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "implement",
+                  "note": "Select based on soil type"
+                }
+              ],
+              "frequency": "Once per season before sowing",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,200 – ₹1,800",
+                "currency": "INR",
+                "per": "acre (tractor hire)",
+                "note": "SAMPLE RATE — verify current local hire charges"
+              },
+              "safety_precautions": [
+                "Keep bystanders, children and animals away from the operating tractor.",
+                "Wear sturdy footwear; never walk behind an operating plough.",
+                "Inspect implement linkages before use.",
+                "Operate only in daylight with adequate visibility."
+              ],
+              "information_source": "ICAR – Directorate of Wheat and Barley Research (DWBR), Karnal. 'Package of Practices for Wheat' (sample reference – verify edition).",
+              "start_day": -28,
+              "end_day": -21,
+              "day_range": [
+                -28,
+                -21
+              ],
+              "items": [
+                {
+                  "name": "Tractor hire (Deep mould-board ploughing)",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 1200.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "machinery",
+                  "source": "CHC Tractor Hire Tariff schedule"
+                },
+                {
+                  "name": "Agricultural Labour",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Harrowing and Field Levelling",
+              "timing": "1–2 weeks before sowing, after deep ploughing",
+              "purpose": "Break soil clods, create a fine seed-bed, level the field to ensure uniform irrigation and drainage.",
+              "instructions": [
+                "1. Run a rotavator or disc harrow over the ploughed field 2–3 times.",
+                "2. After harrowing, use a laser leveller or wooden plank leveller to flatten the surface.",
+                "3. Fill depressions and level raised areas to avoid water pooling.",
+                "4. Ensure slope is gentle (≤1:500) for gravity-flow irrigation.",
+                "5. Mark field bunds and irrigation channels before sowing."
+              ],
+              "materials": [
+                {
+                  "item": "Rotavator or disc harrow",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "implement",
+                  "note": "Tractor-mounted"
+                },
+                {
+                  "item": "Laser leveller (or wooden plank)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "implement",
+                  "note": "Laser leveller reduces water use by 20–25 %"
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹800 – ₹1,500",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE — includes harrowing + levelling hire"
+              },
+              "safety_precautions": [
+                "Switch off tractor PTO before clearing debris from rotavator blades.",
+                "Do not stand on the leveller during operation.",
+                "Wear dust mask during dry harrowing."
+              ],
+              "information_source": "Punjab Agricultural University (PAU), Ludhiana. Agronomy package for wheat (sample reference).",
+              "start_day": -14,
+              "end_day": -7,
+              "day_range": [
+                -14,
+                -7
+              ],
+              "items": [
+                {
+                  "name": "Tractor hire (Rotavator tilth & planking)",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 600.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "machinery",
+                  "source": "CHC Implement Hire Tariff"
+                },
+                {
+                  "name": "Agricultural Labour",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Soil Testing",
+              "timing": "4–6 weeks before sowing; ideally after the previous harvest",
+              "purpose": "Determine soil pH, organic carbon, and macro/micro nutrient status to plan targeted fertilization.",
+              "instructions": [
+                "1. Collect 8–10 soil samples from 0–15 cm depth using a soil auger, following a zigzag pattern across the field.",
+                "2. Mix all samples thoroughly in a clean plastic bucket; take a composite sub-sample of ~500 g.",
+                "3. Air-dry the sub-sample in shade and submit to the nearest Soil Testing Laboratory (STL) or Krishi Vigyan Kendra.",
+                "4. Request analysis for: pH, EC, organic carbon, available N, P, K, and micronutrients (Zn, Fe, B).",
+                "5. Receive the Soil Health Card and plan fertilizer doses accordingly."
+              ],
+              "materials": [
+                {
+                  "item": "Soil auger or khurpi",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool",
+                  "note": "Clean before use to avoid contamination"
+                },
+                {
+                  "item": "Clean plastic bucket and polythene bags",
+                  "quantity": "SAMPLE: 1 each",
+                  "unit": "set",
+                  "note": "Label bag with field ID and date"
+                }
+              ],
+              "frequency": "Once every 2–3 years, or every season for precision farming",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹100 – ₹300",
+                "currency": "INR",
+                "per": "sample (govt. STL fee)",
+                "note": "SAMPLE RATE — many State govts offer subsidised or free testing under Soil Health Card scheme"
+              },
+              "safety_precautions": [
+                "Use gloves when handling soil samples near chemical-contaminated fields.",
+                "Do not smoke or eat while collecting samples.",
+                "Properly label all bags to avoid mix-up."
+              ],
+              "information_source": "Government of India – Soil Health Card Scheme, Department of Agriculture & Farmers' Welfare (DAFPW). soilhealth.dac.gov.in (sample reference).",
+              "start_day": -42,
+              "end_day": -28,
+              "day_range": [
+                -42,
+                -28
+              ],
+              "items": []
+            }
+          ]
+        },
+        "seed_selection": {
+          "stage_number": 2,
+          "stage_name": "Seed Selection",
+          "tasks": [
+            {
+              "task_name": "Variety Selection",
+              "timing": "3–4 weeks before sowing",
+              "purpose": "Choose a certified variety suited to local agro-climatic conditions, disease resistance, and yield potential.",
+              "instructions": [
+                "1. Identify your agro-climatic zone (e.g., North-Western Plains, Central Zone) from the state agriculture department.",
+                "2. Choose a recommended variety for your zone — e.g., HD-2967, GW-496, WH-1105 (SAMPLE names — verify current recommendations).",
+                "3. Purchase certified seeds from a government seed corporation, PAU seed farm, or IFFCO/KRIBHCO outlet.",
+                "4. Check the seed tag for: germination percentage (≥85 %), physical purity (≥98 %), moisture content (≤12 %).",
+                "5. Conduct a simple germination test at home: place 100 seeds on moist cloth for 7 days and count germinated seeds."
+              ],
+              "materials": [
+                {
+                  "item": "Certified wheat seed",
+                  "quantity": "SAMPLE: 40–50 kg",
+                  "unit": "per acre",
+                  "note": "SAMPLE QUANTITY — adjust for variety and sowing method"
+                },
+                {
+                  "item": "Seed tag and quality certificate",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "per bag purchased",
+                  "note": "Always retain seed tags for records"
+                }
+              ],
+              "frequency": null,
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,500 – ₹3,000",
+                "currency": "INR",
+                "per": "acre (seed cost)",
+                "note": "SAMPLE RATE — certified seed prices vary by variety and supplier"
+              },
+              "safety_precautions": [
+                "Buy seeds only from licensed dealers to avoid spurious seed.",
+                "Keep purchase bills and seed tags; required for insurance claims.",
+                "Store purchased seeds in a cool, dry place until sowing."
+              ],
+              "information_source": "ICAR-DWBR Karnal. Variety Release Notifications, State Variety Approval and Notification Committees (sample reference).",
+              "start_day": -28,
+              "end_day": -21,
+              "day_range": [
+                -28,
+                -21
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Seed Treatment",
+              "timing": "12–24 hours before sowing",
+              "purpose": "Protect seeds against seed-borne fungal diseases (e.g., loose smut, Karnal bunt) and soil-borne pathogens.",
+              "instructions": [
+                "1. Spread seeds on a clean tarpaulin in the shade.",
+                "2. For fungal protection: apply a recommended fungicide seed treatment (SAMPLE: Carboxin 37.5 % + Thiram 37.5 % WS or Tebuconazole 2 % DS) at the dose specified on the product label.",
+                "3. Mix the fungicide uniformly over the seeds using a seed-treatment drum or by hand with gloves.",
+                "4. Optionally, apply a bio-agent (e.g., Trichoderma viride) as a second coating after the chemical treatment dries.",
+                "5. Shade-dry treated seeds for 30–60 minutes before sowing. Do NOT use these seeds for food or feed."
+              ],
+              "materials": [
+                {
+                  "item": "Fungicide for seed treatment (see label)",
+                  "quantity": "SAMPLE: per label recommendation",
+                  "unit": "per 100 kg seed",
+                  "note": "SAMPLE — use only registered products; follow product label exactly"
+                },
+                {
+                  "item": "Trichoderma viride (bio-agent, optional)",
+                  "quantity": "SAMPLE: per label recommendation",
+                  "unit": "per 100 kg seed",
+                  "note": "SAMPLE — apply after chemical treatment dries"
+                },
+                {
+                  "item": "Seed treatment drum or clean container",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Once, just before sowing",
+              "application_method": "Dry seed coating / drum mixing",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹100 – ₹250",
+                "currency": "INR",
+                "per": "acre (chemical cost)",
+                "note": "SAMPLE RATE — product prices vary"
+              },
+              "safety_precautions": [
+                "Wear nitrile gloves, face mask and eye protection during seed treatment.",
+                "Never treat seeds in enclosed spaces; ensure ventilation.",
+                "Keep treated seeds away from children, food and feed grains.",
+                "Dispose of empty fungicide containers safely per label instructions.",
+                "Wash hands thoroughly with soap and water after handling."
+              ],
+              "information_source": "Central Insecticides Board & Registration Committee (CIBRC), India. Product registration database. ICAR-DWBR Karnal — Wheat Production Technology (sample reference).",
+              "start_day": -1,
+              "end_day": 0,
+              "day_range": [
+                -1,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Fungicide seed treatment (Carboxin + Thiram WS)",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 150.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "CIBRC registered seed dressing tariff"
+                },
+                {
+                  "name": "Agricultural Labour (Seed treatment & drying)",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "sowing": {
+          "stage_number": 3,
+          "stage_name": "Sowing",
+          "tasks": [
+            {
+              "task_name": "Timely Sowing",
+              "timing": "SAMPLE: 1–25 November (optimal window for North-Western Plains). Verify for your zone.",
+              "purpose": "Sow within the recommended window to avoid yield losses from heat stress at grain filling (late sowing) or frost damage (very early sowing).",
+              "instructions": [
+                "1. Confirm soil moisture is adequate (field capacity) before sowing; irrigate pre-sowing if needed.",
+                "2. Calibrate the seed drill to deliver the recommended seed rate.",
+                "3. Set seed drill row-to-row spacing at SAMPLE: 20–22.5 cm.",
+                "4. Set seed placement depth at SAMPLE: 4–6 cm.",
+                "5. Drill seeds in rows across the slope direction to control erosion.",
+                "6. Make a second pass perpendicular (cross-sowing) if broadcast method is used, to ensure uniform distribution.",
+                "7. Apply basal fertiliser through the fertiliser box of the seed-cum-fertiliser drill in the same pass.",
+                "8. After sowing, lightly roll the field to ensure good seed–soil contact."
+              ],
+              "materials": [
+                {
+                  "item": "Seed-cum-fertiliser drill (tractor-mounted)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "machine",
+                  "note": "Ensures uniform spacing and depth"
+                },
+                {
+                  "item": "Treated certified wheat seed",
+                  "quantity": "SAMPLE: 40–50 kg",
+                  "unit": "per acre",
+                  "note": "SAMPLE QUANTITY — adjust for late sowing (increase by 5–10 kg/acre)"
+                }
+              ],
+              "frequency": "Once at the beginning of the crop cycle",
+              "application_method": "Line sowing with seed drill",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹500 – ₹900",
+                "currency": "INR",
+                "per": "acre (sowing hire + fuel)",
+                "note": "SAMPLE RATE — varies by region and machine availability"
+              },
+              "safety_precautions": [
+                "Never unclog the seed drill tube with hands while the machine is running.",
+                "Check for underground utilities (cables, pipes) before deep tillage in new fields.",
+                "Wear dust mask when operating in dry conditions."
+              ],
+              "information_source": "ICAR-DWBR Karnal. 'Wheat Production Technology' bulletin (sample reference). State Department of Agriculture zonal recommendations.",
+              "start_day": 0,
+              "end_day": 0,
+              "day_range": [
+                0,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Certified Wheat Seed (PBW / HD Series)",
+                  "rate_per_acre": 45.0,
+                  "unit": "kg",
+                  "price_per_unit": 42.0,
+                  "price_type": "OFFICIAL_NSC_TARIFF",
+                  "category": "seed",
+                  "source": "National Seeds Corporation (NSC)"
+                },
+                {
+                  "name": "Tractor seed-cum-fertilizer drill hire",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 650.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "machinery",
+                  "source": "CHC Implement Hire Tariff"
+                },
+                {
+                  "name": "Agricultural Labour (Sowing crew)",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "fertilizer_application": {
+          "stage_number": 4,
+          "stage_name": "Fertilizer Application",
+          "tasks": [
+            {
+              "task_name": "Basal Fertilizer (at Sowing)",
+              "timing": "At the time of sowing (incorporated into soil via fertiliser drill)",
+              "purpose": "Supply phosphorus and potassium — nutrients needed from germination — and a starter dose of nitrogen.",
+              "instructions": [
+                "1. Calculate dose based on Soil Health Card recommendations for your field.",
+                "2. SAMPLE starting dose (verify with agronomist): N:P:K at SAMPLE ratio — e.g., 50 % of total N + full P + full K at sowing.",
+                "3. Measure the required quantity of DAP or SSP (phosphorus source) and MOP (potassium source) accurately.",
+                "4. Mix fertilisers, then load into the fertiliser box of the seed-cum-fertiliser drill.",
+                "5. Apply at seed-row depth, 2–3 cm to the side and below the seed to avoid seed burning.",
+                "6. Record the quantity applied per field for input cost tracking."
+              ],
+              "materials": [
+                {
+                  "item": "Di-Ammonium Phosphate (DAP) or SSP",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE — do not apply without soil test recommendation"
+                },
+                {
+                  "item": "Muriate of Potash (MOP)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE — apply only if soil K is deficient"
+                },
+                {
+                  "item": "Urea (for starter N if needed)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE — basal N fraction only"
+                }
+              ],
+              "frequency": "Once at sowing",
+              "application_method": "Incorporated into seed furrow via fertiliser drill; or broadcast and incorporated before sowing",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,200 – ₹2,500",
+                "currency": "INR",
+                "per": "acre (fertiliser cost only)",
+                "note": "SAMPLE RATE — fertiliser prices are subsidised and vary by state and season"
+              },
+              "safety_precautions": [
+                "Do not mix urea and DAP directly; apply separately or as a blend.",
+                "Store fertilisers in a cool, dry, ventilated shed away from seeds, pesticides and food.",
+                "Wear gloves and dust mask when handling fertiliser bags.",
+                "Wash hands and face after contact with fertilisers.",
+                "Never apply near water bodies or drainage channels."
+              ],
+              "information_source": "Fertiliser Association of India (FAI). ICAR Soil Fertility and Nutrient Management guidelines. State Soil Testing Laboratories (sample references).",
+              "start_day": 0,
+              "end_day": 0,
+              "day_range": [
+                0,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Di-Ammonium Phosphate (DAP 18:46:0)",
+                  "rate_per_acre": 55.0,
+                  "unit": "kg",
+                  "price_per_unit": 27.0,
+                  "price_type": "OFFICIAL_NBS_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "Subsidized NBS market price (Rs 1,350/50 kg bag)"
+                },
+                {
+                  "name": "Muriate of Potash (MOP 60% K2O)",
+                  "rate_per_acre": 25.0,
+                  "unit": "kg",
+                  "price_per_unit": 34.0,
+                  "price_type": "OFFICIAL_NBS_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "Subsidized NBS market price (Rs 1,700/50 kg bag)"
+                }
+              ]
+            },
+            {
+              "task_name": "First Top-Dressing of Nitrogen",
+              "timing": "SAMPLE: 21–25 days after sowing (DAS), at Crown Root Initiation (CRI) stage — usually at the first irrigation",
+              "purpose": "Boost tillering and establishment of productive shoots by supplying nitrogen at the most responsive stage.",
+              "instructions": [
+                "1. Wait until the first irrigation is due (CRI stage, ~21 DAS for timely-sown wheat).",
+                "2. Calculate remaining nitrogen dose (SAMPLE: 50 % of total recommended N — confirm with Soil Health Card).",
+                "3. Measure urea accurately using a weighing scale or calibrated cup.",
+                "4. Broadcast urea uniformly over the standing crop by hand or by a fertiliser broadcaster.",
+                "5. Immediately release irrigation water so urea is washed into the root zone.",
+                "6. Avoid top-dressing when strong winds or rain are forecast (risk of volatilisation or run-off)."
+              ],
+              "materials": [
+                {
+                  "item": "Urea (46 % N)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE — quantity depends on soil test and basal dose applied"
+                }
+              ],
+              "frequency": "Once (first top-dressing); a second dose may be applied at jointing if recommended",
+              "application_method": "Broadcast over standing crop, followed immediately by irrigation",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹400 – ₹700",
+                "currency": "INR",
+                "per": "acre (urea cost only)",
+                "note": "SAMPLE RATE — subsidised urea prices vary"
+              },
+              "safety_precautions": [
+                "Do not apply urea near blooming flowers or when temperature is above 35 °C (risk of leaf scorch).",
+                "Wash hands after handling urea.",
+                "Avoid inhalation of fine urea dust.",
+                "Do not apply urea near water sources."
+              ],
+              "information_source": "ICAR-DWBR Karnal. PAU Ludhiana Wheat Agronomy recommendations (sample references).",
+              "start_day": 21,
+              "end_day": 25,
+              "day_range": [
+                21,
+                25
+              ],
+              "items": [
+                {
+                  "name": "Urea (46% N) — 1st Split Top-Dressing",
+                  "rate_per_acre": 55.0,
+                  "unit": "kg",
+                  "price_per_unit": 5.38,
+                  "price_type": "ACTUAL_GOI_MRP",
+                  "category": "fertilizer",
+                  "source": "Statutory MRP notified by Govt. of India (Rs 242/45 kg bag)"
+                },
+                {
+                  "name": "Agricultural Labour (Broadcasting)",
+                  "rate_per_acre": 0.75,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Micronutrient Application (Zinc Sulphate)",
+              "timing": "If soil Zn is deficient (as per Soil Health Card): apply before sowing or as foliar at tillering",
+              "purpose": "Correct zinc deficiency, which causes stunted growth and white-striped leaves in wheat, especially on alkaline soils.",
+              "instructions": [
+                "1. Apply only if Soil Health Card shows available Zn below threshold (SAMPLE: <0.6 ppm — verify).",
+                "2. Soil application: broadcast zinc sulphate (21 % Zn) before the last harrowing and incorporate.",
+                "3. Foliar application (if soil application missed): dissolve zinc sulphate in water per label rate; add a sticking agent; spray on leaves at tillering stage during early morning or evening.",
+                "4. Avoid spraying on hot afternoons to prevent leaf burn."
+              ],
+              "materials": [
+                {
+                  "item": "Zinc Sulphate (21 % Zn) — soil grade or foliar grade",
+                  "quantity": "SAMPLE: per Soil Health Card or product label",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE — apply only on recommendation; excess Zn is toxic to crops"
+                }
+              ],
+              "frequency": "Once per 3–5 years for soil application; or once per season as foliar if needed",
+              "application_method": "Soil incorporation or foliar spray",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹150 – ₹400",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE — varies by product grade and supplier"
+              },
+              "safety_precautions": [
+                "Wear gloves and eye protection; zinc sulphate is mildly corrosive.",
+                "Do not mix zinc sulphate with phosphatic fertilisers (forms insoluble precipitate).",
+                "Rinse sprayer thoroughly after use."
+              ],
+              "information_source": "ICAR-IISS Bhopal. Micronutrient Management guidelines. State Soil Health Card reports (sample references).",
+              "start_day": -7,
+              "end_day": 35,
+              "day_range": [
+                -7,
+                35
+              ],
+              "items": [
+                {
+                  "name": "Zinc Sulphate Heptahydrate (21% Zn)",
+                  "rate_per_acre": 10.0,
+                  "unit": "kg",
+                  "price_per_unit": 45.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "State Agro Industries Corporation"
+                },
+                {
+                  "name": "Urea (46% N) — 2nd Split Top-Dressing",
+                  "rate_per_acre": 55.0,
+                  "unit": "kg",
+                  "price_per_unit": 5.38,
+                  "price_type": "ACTUAL_GOI_MRP",
+                  "category": "fertilizer",
+                  "source": "Statutory MRP notified by Govt. of India"
+                },
+                {
+                  "name": "Agricultural Labour (Broadcasting & placement)",
+                  "rate_per_acre": 0.75,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "irrigation": {
+          "stage_number": 5,
+          "stage_name": "Irrigation",
+          "tasks": [
+            {
+              "task_name": "Pre-Sowing Irrigation (Palewa)",
+              "timing": "5–7 days before sowing, if soil is dry",
+              "purpose": "Create adequate soil moisture at sowing depth for uniform germination.",
+              "instructions": [
+                "1. Check soil moisture by pressing a handful of soil: if it doesn't form a ball, irrigate.",
+                "2. Apply a light irrigation (SAMPLE: ~5 cm depth) uniformly over the field.",
+                "3. Allow the field to reach 'field capacity' and the surface to dry enough for tillage before sowing.",
+                "4. Do not sow into waterlogged soil."
+              ],
+              "materials": [
+                {
+                  "item": "Canal water or tube-well water",
+                  "quantity": "SAMPLE: ~5 cm depth",
+                  "unit": "per application",
+                  "note": "SAMPLE — actual volume depends on field size and soil type"
+                }
+              ],
+              "frequency": "Once before sowing if needed",
+              "application_method": "Flood / furrow irrigation",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹200 – ₹500",
+                "currency": "INR",
+                "per": "acre (pump/canal charges)",
+                "note": "SAMPLE RATE — varies by water source"
+              },
+              "safety_precautions": [
+                "Ensure drainage channels are clear to prevent field flooding.",
+                "Do not leave pump sets unattended near open water sources."
+              ],
+              "information_source": "ICAR-DWBR. Wheat Water Management guidelines (sample reference).",
+              "start_day": -7,
+              "end_day": -5,
+              "day_range": [
+                -7,
+                -5
+              ],
+              "items": [
+                {
+                  "name": "Irrigation pumping electricity/diesel & canal cess",
+                  "rate_per_acre": 1.0,
+                  "unit": "event",
+                  "price_per_unit": 350.0,
+                  "price_type": "BENCHMARK",
+                  "category": "irrigation",
+                  "source": "CACP Cost of Cultivation Studies / Tube-well cess"
+                },
+                {
+                  "name": "Agricultural Labour (Field channel supervision)",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Crown Root Initiation (CRI) Irrigation",
+              "timing": "SAMPLE: 20–25 DAS — the most critical irrigation for wheat",
+              "purpose": "Support establishment of crown roots and early tillers; most water-sensitive growth stage.",
+              "instructions": [
+                "1. Irrigate at SAMPLE 20–25 DAS regardless of apparent soil moisture — this is the single most critical irrigation.",
+                "2. Apply SAMPLE ~5 cm of water uniformly.",
+                "3. Combine this irrigation with the first nitrogen top-dressing: broadcast urea just before releasing water.",
+                "4. Monitor that water reaches all parts of the field; clear blocked furrows."
+              ],
+              "materials": [
+                {
+                  "item": "Irrigation water",
+                  "quantity": "SAMPLE: ~5 cm depth",
+                  "unit": "per application",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once (CRI stage)",
+              "application_method": "Flood / furrow / sprinkler irrigation",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹200 – ₹500",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Avoid waterlogging — excess water at CRI can cause yellowing and root rot.",
+                "Inspect pump set and pipes before use; check for leaks."
+              ],
+              "information_source": "ICAR-DWBR Karnal. 'Critical Irrigation Stages in Wheat' (sample reference).",
+              "start_day": 20,
+              "end_day": 25,
+              "day_range": [
+                20,
+                25
+              ],
+              "items": [
+                {
+                  "name": "Irrigation pumping electricity/diesel & canal cess",
+                  "rate_per_acre": 1.0,
+                  "unit": "event",
+                  "price_per_unit": 350.0,
+                  "price_type": "BENCHMARK",
+                  "category": "irrigation",
+                  "source": "CACP Cost of Cultivation Studies / Tube-well cess"
+                },
+                {
+                  "name": "Agricultural Labour (Field channel supervision)",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Tillering, Jointing, Flowering and Grain-Filling Irrigations",
+              "timing": "SAMPLE: ~40, 60, 80, and 100 DAS respectively — confirm with local department",
+              "purpose": "Sustain vegetative growth, spike development, pollination, and grain filling.",
+              "instructions": [
+                "1. Monitor soil moisture by feel or using a tensiometer between irrigations.",
+                "2. Tillering irrigation (~40 DAS): apply SAMPLE ~5 cm; promotes productive tiller development.",
+                "3. Jointing irrigation (~60 DAS): apply SAMPLE ~5 cm; supports internode elongation and flag leaf development.",
+                "4. Flowering/boot irrigation (~80 DAS): apply SAMPLE ~5 cm; avoids moisture stress at pollination.",
+                "5. Grain-filling irrigation (~100 DAS): apply SAMPLE ~4–5 cm; ensures plump grain development.",
+                "6. Stop irrigation 2–3 weeks before anticipated harvest to allow crop to mature and field to dry."
+              ],
+              "materials": [
+                {
+                  "item": "Irrigation water",
+                  "quantity": "SAMPLE: ~4–5 cm per application",
+                  "unit": "per irrigation event",
+                  "note": "SAMPLE — actual requirement varies by soil and weather"
+                }
+              ],
+              "frequency": "SAMPLE: 4–5 times after CRI; total 5–6 irrigations for the season",
+              "application_method": "Flood, furrow or sprinkler irrigation",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹800 – ₹2,000",
+                "currency": "INR",
+                "per": "acre (all post-CRI irrigations combined)",
+                "note": "SAMPLE RATE — includes electricity/diesel for pump"
+              },
+              "safety_precautions": [
+                "Never irrigate at flowering in the afternoon heat — may affect pollination.",
+                "Ensure earthen bunds are intact to prevent water loss.",
+                "Switch off pump sets after each irrigation to conserve electricity."
+              ],
+              "information_source": "ICAR-DWBR Karnal. PAU Ludhiana. Wheat agronomy package of practices (sample references).",
+              "start_day": 40,
+              "end_day": 100,
+              "day_range": [
+                40,
+                100
+              ],
+              "discrete_days": [
+                40,
+                60,
+                80,
+                100
+              ],
+              "items": [
+                {
+                  "name": "Irrigation pumping electricity/diesel (3 remaining critical stages)",
+                  "rate_per_acre": 3.0,
+                  "unit": "events",
+                  "price_per_unit": 350.0,
+                  "price_type": "BENCHMARK",
+                  "category": "irrigation",
+                  "source": "CACP Cost of Cultivation Studies / Tube-well cess"
+                },
+                {
+                  "name": "Agricultural Labour (Irrigation supervision across 3 events)",
+                  "rate_per_acre": 1.5,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "weed_management": {
+          "stage_number": 6,
+          "stage_name": "Weed Management",
+          "tasks": [
+            {
+              "task_name": "Pre-Emergence Herbicide Application",
+              "timing": "SAMPLE: 1–3 days after sowing, before weeds and crop emergence",
+              "purpose": "Prevent the early germination and establishment of grassy and broad-leaf weeds that compete heavily with young wheat seedlings.",
+              "instructions": [
+                "1. Ensure soil has adequate moisture for herbicide activation (irrigate if needed before spraying).",
+                "2. Select a registered pre-emergence herbicide for wheat (SAMPLE product category: Pendimethalin or Isoproturon — confirm registration with CIBRC and local guidance).",
+                "3. Mix herbicide in water per label rate in a clean knapsack or boom sprayer.",
+                "4. Spray uniformly over the soil surface within 1–3 days of sowing.",
+                "5. Avoid spraying on windy days or when rain is forecast within 4 hours.",
+                "6. Do not disturb the soil spray-film after application."
+              ],
+              "materials": [
+                {
+                  "item": "Registered pre-emergence herbicide (see label)",
+                  "quantity": "SAMPLE: per product label (DO NOT invent a dose)",
+                  "unit": "per acre",
+                  "note": "SAMPLE — use CIBRC-registered products only; follow label exactly"
+                },
+                {
+                  "item": "Knapsack sprayer (15-litre)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                },
+                {
+                  "item": "Clean water for mixing",
+                  "quantity": "SAMPLE: per label requirement",
+                  "unit": "litres per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once before emergence",
+              "application_method": "Flat-fan nozzle boom spray over soil surface",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹700",
+                "currency": "INR",
+                "per": "acre (herbicide + labour)",
+                "note": "SAMPLE RATE — product prices vary"
+              },
+              "safety_precautions": [
+                "Wear full PPE: rubber gloves, face mask, goggles and full-sleeve clothing.",
+                "Never eat, drink or smoke during spraying.",
+                "Spray downwind; move in the direction of the wind.",
+                "Rinse sprayer with clean water 3 times after use; dispose of wash-water safely.",
+                "Seek medical attention immediately in case of accidental ingestion or skin contact; carry product label to hospital."
+              ],
+              "information_source": "Central Insecticides Board & Registration Committee (CIBRC), India. ICAR-DWBR Weed Management in Wheat (sample references). Directorate of Plant Protection, Quarantine & Storage (DPPQS).",
+              "start_day": 1,
+              "end_day": 3,
+              "day_range": [
+                1,
+                3
+              ],
+              "items": [
+                {
+                  "name": "Weed management herbicide (Pendimethalin 30% EC)",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 500.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "ICAR-DWR Weed Management Package"
+                },
+                {
+                  "name": "Agricultural Labour (Knapsack spray operation)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Post-Emergence Herbicide Application",
+              "timing": "SAMPLE: 25–35 DAS (at 2–3 leaf stage of weeds) for narrow-leaf; 30–40 DAS for broad-leaf weeds",
+              "purpose": "Control escaped weeds that germinated after pre-emergence treatment, especially Phalaris minor (Ghaas) and broad-leaf weeds like Bathu.",
+              "instructions": [
+                "1. Identify predominant weed species before selecting herbicide (narrow-leaf vs. broad-leaf vs. mixed).",
+                "2. Apply a registered post-emergence herbicide (SAMPLE category: Clodinafop + Metsulfuron mix for mixed weeds — verify CIBRC registration).",
+                "3. Mix per label rate; add recommended adjuvant/surfactant if specified on the label.",
+                "4. Spray on clear days, avoiding fog or heavy dew.",
+                "5. Do not irrigate for 24–48 hours after application to allow absorption.",
+                "6. Record date, product, dose and field ID."
+              ],
+              "materials": [
+                {
+                  "item": "Registered post-emergence herbicide (see label)",
+                  "quantity": "SAMPLE: per product label",
+                  "unit": "per acre",
+                  "note": "SAMPLE — do not exceed label rate; resistance risk if under-dosed"
+                },
+                {
+                  "item": "Adjuvant / surfactant (if specified on label)",
+                  "quantity": "SAMPLE: per label",
+                  "unit": "per litre spray solution",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "Knapsack sprayer",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Once at recommended weed stage",
+              "application_method": "Directed spray over standing crop canopy using flat-fan nozzle",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹400 – ₹900",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear complete PPE: gloves, mask, goggles, apron.",
+                "Do not spray in high temperature (>35 °C) — risk of crop phytotoxicity.",
+                "Keep children, livestock and bystanders out of the field during and 24 hours after spraying.",
+                "Store unused spray solution in original container for maximum 24 hours; do not reuse old solution."
+              ],
+              "information_source": "CIBRC India. ICAR-DWBR. State Weed Science Research Station bulletins (sample references).",
+              "start_day": 25,
+              "end_day": 35,
+              "day_range": [
+                25,
+                35
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Manual / Inter-Row Weeding",
+              "timing": "SAMPLE: 30–45 DAS if herbicide application was missed or partial",
+              "purpose": "Remove surviving weeds before they flower and set seed; prevent weed seed bank build-up.",
+              "instructions": [
+                "1. Use a khurpi (hand hoe) or wheel hoe to manually uproot weeds between crop rows.",
+                "2. Work when soil is slightly moist for easier weed removal.",
+                "3. Uproot weeds completely including roots; do not leave them to re-root.",
+                "4. Collect uprooted weeds and compost them away from the field or dry and burn."
+              ],
+              "materials": [
+                {
+                  "item": "Khurpi / hand hoe",
+                  "quantity": "SAMPLE: 1 per worker",
+                  "unit": "tool",
+                  "note": null
+                },
+                {
+                  "item": "Labour (farm workers)",
+                  "quantity": "SAMPLE: 4–6",
+                  "unit": "person-days per acre",
+                  "note": "SAMPLE — more effective if done early"
+                }
+              ],
+              "frequency": "Once or twice as needed",
+              "application_method": "Manual inter-row cultivation",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹600 – ₹1,200",
+                "currency": "INR",
+                "per": "acre (labour cost)",
+                "note": "SAMPLE RATE — varies by local wage rates"
+              },
+              "safety_precautions": [
+                "Wear sturdy footwear to protect feet.",
+                "Take regular breaks to prevent heat exhaustion in sunny conditions.",
+                "Drink adequate water."
+              ],
+              "information_source": "ICAR-Directorate of Weed Research, Jabalpur. Integrated Weed Management guidelines (sample reference).",
+              "start_day": 30,
+              "end_day": 45,
+              "day_range": [
+                30,
+                45
+              ],
+              "items": [
+                {
+                  "name": "Agricultural Labour (Manual weed rogueing)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "pest_disease_monitoring": {
+          "stage_number": 7,
+          "stage_name": "Pest and Disease Monitoring",
+          "tasks": [
+            {
+              "task_name": "Aphid (Sitobion avenae) Scouting and Control",
+              "timing": "SAMPLE: Weekly scouting from tillering (30 DAS) to grain filling (90 DAS); peak risk in February–March",
+              "purpose": "Detect aphid infestation early; aphids suck phloem sap and can reduce grain yield and transmit barley yellow dwarf virus.",
+              "instructions": [
+                "1. Walk field in a W-pattern; examine 5 random tillers/spikes at 5 points.",
+                "2. Count aphids per tiller/leaf; record and compare to Economic Threshold Level (SAMPLE ETL: >10 aphids per tiller at tillering, or >10 per spike at grain filling — verify with local KVK).",
+                "3. If below ETL, encourage natural enemies (ladybird beetles, lacewings) by reducing broad-spectrum pesticide use.",
+                "4. If ETL is reached: apply a registered insecticide (SAMPLE category: Dimethoate or Thiamethoxam — verify CIBRC registration and correct dose from label).",
+                "5. Spray in the evening to protect pollinators.",
+                "6. Do not spray during flowering unless infestation is severe."
+              ],
+              "materials": [
+                {
+                  "item": "Magnifying glass (10x)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool",
+                  "note": "For accurate aphid counting"
+                },
+                {
+                  "item": "Registered insecticide (CIBRC-approved)",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE — DO NOT follow any specific dose not on the product label"
+                },
+                {
+                  "item": "Knapsack sprayer",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Scouting: weekly. Treatment: only on reaching ETL",
+              "application_method": "Foliar spray with knapsack or power sprayer",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹200 – ₹500",
+                "currency": "INR",
+                "per": "acre per spray (if required)",
+                "note": "SAMPLE RATE — treatment may not be needed every season"
+              },
+              "safety_precautions": [
+                "Wear full PPE when applying insecticides.",
+                "Observe pre-harvest interval (PHI) on product label before harvest.",
+                "Never spray near water bodies or when bees are active.",
+                "Dispose of empty containers by triple-rinsing and puncturing."
+              ],
+              "information_source": "ICAR-IARI New Delhi. Wheat Entomology division. National Centre for Integrated Pest Management (NCIPM) IPM bulletins (sample references).",
+              "start_day": 30,
+              "end_day": 90,
+              "day_range": [
+                30,
+                90
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Yellow Rust (Stripe Rust) Monitoring and Control",
+              "timing": "SAMPLE: Monitor from tillering onward; risk period December–February in North India",
+              "purpose": "Detect yellow rust (Puccinia striiformis) early; can cause 70–100 % yield loss if unchecked in susceptible varieties.",
+              "instructions": [
+                "1. Scout field weekly; look for yellow-orange powdery stripes on leaves, arranged in rows.",
+                "2. Check lower and upper leaf surfaces; examine crop at multiple field spots.",
+                "3. If disease incidence exceeds SAMPLE threshold (verify with KVK): apply a registered fungicide (SAMPLE category: Propiconazole or Tebuconazole — verify CIBRC registration and label dose).",
+                "4. Spray thoroughly to cover both leaf surfaces.",
+                "5. If foliar symptoms are severe, a second spray may be needed after 10–14 days — check label."
+              ],
+              "materials": [
+                {
+                  "item": "Registered fungicide (CIBRC-approved)",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE — do not self-prescribe fungicide doses"
+                },
+                {
+                  "item": "Power sprayer or knapsack sprayer",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Scouting: weekly. Spray: only if disease threshold is reached",
+              "application_method": "Foliar spray covering both leaf surfaces",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹700",
+                "currency": "INR",
+                "per": "acre per spray",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear PPE: gloves, mask, goggles during fungicide mixing and spraying.",
+                "Observe PHI (pre-harvest interval) specified on product label.",
+                "Do not enter treated field without PPE until spray dries.",
+                "Report unusual disease spread to the local Plant Protection Officer."
+              ],
+              "information_source": "ICAR-DWBR Karnal. All India Wheat and Barley Improvement Programme (AIWBIP) disease alert bulletins. DPPQS advisory (sample references).",
+              "start_day": 30,
+              "end_day": 100,
+              "day_range": [
+                30,
+                100
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Termite Monitoring and Control",
+              "timing": "SAMPLE: Check at germination (10–15 DAS) and at any stage if patchy field emergence or wilting occurs",
+              "purpose": "Termites attack roots and stem bases causing dead heart symptoms and patchy crop stand.",
+              "instructions": [
+                "1. Spot check patches of missing or wilting plants; dig soil around affected areas to check for termite galleries.",
+                "2. If termite colonies are confirmed: apply a registered termiticide in irrigation water or as a soil drench (SAMPLE category: Chlorpyrifos soil application — verify CIBRC registration and label).",
+                "3. Pour termiticide solution along crop rows in affected patches.",
+                "4. Avoid repeated or preventive application; use only on confirmed infestation."
+              ],
+              "materials": [
+                {
+                  "item": "Registered termiticide (CIBRC-approved)",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per affected area",
+                  "note": "SAMPLE — targeted spot application preferred over full-field spray"
+                }
+              ],
+              "frequency": "Only when confirmed infestation",
+              "application_method": "Soil drench or incorporation in irrigation water",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹200 – ₹600",
+                "currency": "INR",
+                "per": "acre (spot treatment only)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Organophosphate termiticides are acutely toxic — wear full PPE.",
+                "Do not allow children or animals in treated area for 48–72 hours.",
+                "Wash hands, face and exposed skin with soap after handling."
+              ],
+              "information_source": "ICAR-IARI Entomology Division. NCIPM IPM guidelines for wheat (sample references).",
+              "start_day": 10,
+              "end_day": 15,
+              "day_range": [
+                10,
+                15
+              ],
+              "items": []
+            }
+          ]
+        },
+        "crop_growth_monitoring": {
+          "stage_number": 8,
+          "stage_name": "Crop Growth Monitoring",
+          "tasks": [
+            {
+              "task_name": "Germination and Plant Stand Assessment",
+              "timing": "SAMPLE: 7–10 DAS",
+              "purpose": "Confirm adequate plant population and identify gaps or problem areas for corrective action.",
+              "instructions": [
+                "1. Count plants in 3–5 random 1-metre row lengths in different parts of the field.",
+                "2. Compare with expected plant population based on seed rate and germination %.",
+                "3. SAMPLE benchmark: aim for SAMPLE 200–300 plants per sq. metre (verify for your variety).",
+                "4. If large gaps exist (>10 % area): resow those patches within 10–12 DAS.",
+                "5. Record germination % and note any poor patches for targeted management."
+              ],
+              "materials": [
+                {
+                  "item": "Measuring tape",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool",
+                  "note": null
+                },
+                {
+                  "item": "Field notebook / smartphone app",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": "Record date, location, count"
+                }
+              ],
+              "frequency": "Once at 7–10 DAS",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil (farmer's own time)",
+                "currency": "INR",
+                "per": "per observation",
+                "note": "No direct cost"
+              },
+              "safety_precautions": [
+                "Walk carefully through young crop to avoid trampling seedlings.",
+                "Carry water when scouting in hot weather."
+              ],
+              "information_source": "ICAR-DWBR. State Department of Agriculture crop monitoring protocols (sample references).",
+              "start_day": 7,
+              "end_day": 10,
+              "day_range": [
+                7,
+                10
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Tillers and Leaf Colour Monitoring (SPAD / LCC)",
+              "timing": "SAMPLE: 30, 45 and 60 DAS",
+              "purpose": "Track productive tiller count and detect nitrogen deficiency through leaf colour changes before yield loss occurs.",
+              "instructions": [
+                "1. At each observation point, count main stem + tillers on 5 plants in 3 locations.",
+                "2. Use a Leaf Colour Chart (LCC, 4-colour) or SPAD-502 chlorophyll meter to assess leaf greenness.",
+                "3. SAMPLE LCC threshold (verify with state guide): if LCC reading falls below 3 (on 1–4 scale), apply additional nitrogen top-dressing.",
+                "4. Record readings with date and field map position.",
+                "5. Cross-check against expected growth stage milestones for your variety."
+              ],
+              "materials": [
+                {
+                  "item": "Leaf Colour Chart (LCC)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool",
+                  "note": "Available from ICAR for free / low cost"
+                },
+                {
+                  "item": "SPAD-502 chlorophyll meter (optional)",
+                  "quantity": "SAMPLE: 1 (shared/rented)",
+                  "unit": "instrument",
+                  "note": "Available at KVK"
+                }
+              ],
+              "frequency": "SAMPLE: 3 times during vegetative-to-jointing stages",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹0 – ₹50",
+                "currency": "INR",
+                "per": "per observation (LCC is free)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "No chemical hazards; standard field safety applies (sturdy footwear, sun protection)."
+              ],
+              "information_source": "IRRI (International Rice Research Institute) LCC methodology adapted for wheat by ICAR-DWBR (sample reference).",
+              "start_day": 30,
+              "end_day": 60,
+              "day_range": [
+                30,
+                60
+              ],
+              "discrete_days": [
+                30,
+                45,
+                60
+              ],
+              "items": []
+            }
+          ]
+        },
+        "harvesting": {
+          "stage_number": 9,
+          "stage_name": "Harvesting",
+          "tasks": [
+            {
+              "task_name": "Maturity Assessment and Harvest Timing",
+              "timing": "SAMPLE: When grain moisture is at SAMPLE 12–14 % (approximately 145–150 DAS for timely-sown crop); verify by bite test or moisture meter",
+              "purpose": "Harvest at the correct moisture to minimise shattering losses, ensure safe storage and maximise milling quality.",
+              "instructions": [
+                "1. Observe crop: leaves and stems should be golden-yellow; spikes dried and drooping.",
+                "2. Perform bite test: grain should be hard and not doughy.",
+                "3. Use a grain moisture meter for confirmation (SAMPLE: harvest at 12–14 % moisture).",
+                "4. Plan harvesting schedule to complete within 5–7 days of reaching maturity (before shattering begins).",
+                "5. Arrange combine harvester or labour in advance; peak demand causes delays."
+              ],
+              "materials": [
+                {
+                  "item": "Grain moisture meter",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "instrument",
+                  "note": "Borrow from KVK or PACS if not owned"
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil (observation only)",
+                "currency": "INR",
+                "per": "per assessment",
+                "note": null
+              },
+              "safety_precautions": [
+                "Do not harvest when grain is too moist (>16 %) — storage risk.",
+                "Do not delay harvest beyond SAMPLE 15 % moisture — shattering loss increases."
+              ],
+              "information_source": "ICAR-DWBR Karnal. FAO post-harvest grain guidelines (sample references).",
+              "start_day": 145,
+              "end_day": 150,
+              "day_range": [
+                145,
+                150
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Mechanical Harvesting (Combine Harvester)",
+              "timing": "At optimum maturity; SAMPLE: March–April for Rabi wheat in North India",
+              "purpose": "Harvest, thresh and clean grain in a single operation; reduce drudgery and field time.",
+              "instructions": [
+                "1. Book combine harvester in advance; check that header height and concave clearance are set for wheat.",
+                "2. Start harvesting in the morning after dew evaporates.",
+                "3. Set cutting height at SAMPLE 15–20 cm above ground to minimise straw intake.",
+                "4. Monitor grain tank; transfer grain into clean, dry trolleys or bags.",
+                "5. Manage crop residue (straw): use a straw spreader attachment or collect for fodder; avoid open burning (illegal in most states and harmful).",
+                "6. Weigh harvested grain and record yield per acre."
+              ],
+              "materials": [
+                {
+                  "item": "Self-propelled combine harvester",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "machine (hired)",
+                  "note": "Verify machine condition before hiring"
+                },
+                {
+                  "item": "Clean jute or HDPE bags / trolley",
+                  "quantity": "SAMPLE: as required by expected yield",
+                  "unit": "bags",
+                  "note": "Ensure bags are clean and dry"
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,200 – ₹2,000",
+                "currency": "INR",
+                "per": "acre (combine hire)",
+                "note": "SAMPLE RATE — peak season rates may be higher"
+              },
+              "safety_precautions": [
+                "Keep bystanders and children away from operating combine.",
+                "Do not climb on moving machine.",
+                "Wear ear protection near combine engine.",
+                "Strictly avoid burning crop residue — risk of fire, air pollution; attracts legal penalties in several states."
+              ],
+              "information_source": "Central Farm Machinery Training & Testing Institute (CFMTTI), Budni. ICAR-CIAE Bhopal combine harvester guidelines (sample references).",
+              "start_day": 148,
+              "end_day": 152,
+              "day_range": [
+                148,
+                152
+              ],
+              "items": [
+                {
+                  "name": "Combine harvester contract (harvesting, threshing & cleaning)",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 1800.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "harvesting",
+                  "source": "Regional Agricultural Harvester Union tariff"
+                }
+              ]
+            }
+          ]
+        },
+        "post_harvest_handling": {
+          "stage_number": 10,
+          "stage_name": "Post-Harvest Handling",
+          "tasks": [
+            {
+              "task_name": "Cleaning and Winnowing",
+              "timing": "Immediately after harvest (within 1–2 days)",
+              "purpose": "Remove dust, chaff, broken grains and foreign matter to improve grain quality and storage life.",
+              "instructions": [
+                "1. Pass harvested grain through a grain cleaner or rotary sieve to remove coarse foreign matter.",
+                "2. Winnow using natural wind or a power winnower to separate light chaff and dust.",
+                "3. Spread cleaned grain on a clean tarpaulin in the sun for sun-drying.",
+                "4. Monitor moisture: target SAMPLE ≤12 % for safe long-term storage (verify with moisture meter).",
+                "5. Rake and turn grain every 2–3 hours during sun-drying."
+              ],
+              "materials": [
+                {
+                  "item": "Grain cleaner / rotary sieve",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit (hired/shared)",
+                  "note": null
+                },
+                {
+                  "item": "Clean tarpaulin",
+                  "quantity": "SAMPLE: as required by quantity",
+                  "unit": "sq. metres",
+                  "note": "Must be clean and dry"
+                },
+                {
+                  "item": "Grain moisture meter",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "instrument",
+                  "note": null
+                }
+              ],
+              "frequency": "Once after harvest",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹200 – ₹500",
+                "currency": "INR",
+                "per": "acre (cleaning machine hire + labour)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Do not store grain above SAMPLE 12 % moisture — fungal growth and mycotoxin risk.",
+                "Protect drying grain from rain; have tarpaulin covers ready.",
+                "Wear dust mask during cleaning and winnowing."
+              ],
+              "information_source": "FAO. 'Prevention of Post-harvest Losses: A Training Manual' (sample reference). ICAR-CIAE grain processing guidelines.",
+              "start_day": 151,
+              "end_day": 153,
+              "day_range": [
+                151,
+                153
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Bag Storage and Godown Management",
+              "timing": "After grain is dried to safe moisture level (SAMPLE ≤12 %)",
+              "purpose": "Protect grain from moisture re-absorption, insects, rodents and fungi during storage.",
+              "instructions": [
+                "1. Procure clean, new or thoroughly cleaned HDPE woven bags.",
+                "2. Fill and stitch bags; label with: crop name, variety, date, field, quantity.",
+                "3. Stack bags on wooden pallets or polythene sheets (not directly on floor) in rows with a gap from the wall.",
+                "4. Apply grain protectant as a dust dressing or admixture to bags (SAMPLE: Deltamethrin or Malathion dust at label rate — verify for food grain storage use with CIBRC).",
+                "5. Inspect storage monthly for insect damage, moisture ingress or rodent signs.",
+                "6. Use rodent traps or rodenticide bait stations around the storage perimeter."
+              ],
+              "materials": [
+                {
+                  "item": "HDPE woven bags (50 kg capacity)",
+                  "quantity": "SAMPLE: as required by yield",
+                  "unit": "bags",
+                  "note": null
+                },
+                {
+                  "item": "Grain protectant (CIBRC-approved for stored grain)",
+                  "quantity": "SAMPLE: per product label",
+                  "unit": "per quintal stored",
+                  "note": "SAMPLE — verify product is approved for food grain storage"
+                },
+                {
+                  "item": "Wooden pallets or polythene sheet",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "units",
+                  "note": "Keeps bags off damp floor"
+                },
+                {
+                  "item": "Rodent traps or bait stations",
+                  "quantity": "SAMPLE: 1 per 5 metres of perimeter",
+                  "unit": "units",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Initial treatment at storage; monthly inspection",
+              "application_method": "Dust admixture in bag or fumigation (by trained operator only)",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹400 – ₹900",
+                "currency": "INR",
+                "per": "quintal (bags + protectant)",
+                "note": "SAMPLE RATE — varies by storage duration and quantity"
+              },
+              "safety_precautions": [
+                "Phosphine fumigation (celphos/aluminium phosphide) MUST be done ONLY by a licensed fumigator — never attempt alone.",
+                "Do not enter fumigated godown without respirator and clearance from fumigator.",
+                "Observe re-entry interval specified by fumigator.",
+                "Keep rodenticide bait stations inaccessible to children and pets."
+              ],
+              "information_source": "Central Warehousing Corporation (CWC) storage guidelines. Food Corporation of India (FCI) grain storage manual. CIBRC registered product list for stored grain (sample references).",
+              "start_day": 153,
+              "end_day": 160,
+              "day_range": [
+                153,
+                160
+              ],
+              "items": [
+                {
+                  "name": "Packaging storage bags (50 kg HDPE woven bags)",
+                  "rate_per_acre": 40.0,
+                  "unit": "bags",
+                  "price_per_unit": 28.0,
+                  "price_type": "BENCHMARK",
+                  "category": "other",
+                  "source": "Packaging industry benchmark (20 qtl yield * 2 bags/qtl)"
+                },
+                {
+                  "name": "Agricultural Labour (Bag filling, stitching & stacking)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "selling_produce": {
+          "stage_number": 11,
+          "stage_name": "Selling the Produce",
+          "tasks": [
+            {
+              "task_name": "Market Intelligence and Price Discovery",
+              "timing": "2–4 weeks before anticipated harvest / sale",
+              "purpose": "Identify the best available market price and selling channel to maximise net returns.",
+              "instructions": [
+                "1. Check the current Minimum Support Price (MSP) declared by CACP/Government for wheat.",
+                "2. Monitor local mandi (APMC) prices daily via: Agmarknet portal (agmarknet.nic.in), e-NAM platform, or State Mandi Board app.",
+                "3. Compare processor/trader direct-purchase prices with mandi prices.",
+                "4. Calculate net realisation after deducting transport, mandi cess and commission.",
+                "5. Plan sale timing: avoid selling at the immediate post-harvest glut if storage facilities allow.",
+                "6. Join Farmer Producer Organisation (FPO) or cooperative if available for collective bargaining."
+              ],
+              "materials": [
+                {
+                  "item": "Smartphone / internet access",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "device",
+                  "note": "For price apps (e-NAM, Agmarknet, DAFPW portal)"
+                }
+              ],
+              "frequency": "Ongoing from pre-harvest to sale completion",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil to ₹50",
+                "currency": "INR",
+                "per": "per price check (data cost only)",
+                "note": null
+              },
+              "safety_precautions": [
+                "Beware of fraudulent middlemen offering pre-harvest advance at exploitative rates.",
+                "Do not sell below MSP; report MSP violations to the local Agriculture Officer."
+              ],
+              "information_source": "Commission for Agricultural Costs and Prices (CACP). Agmarknet – agmarknet.nic.in. e-NAM – enam.gov.in (sample references).",
+              "start_day": 130,
+              "end_day": 155,
+              "day_range": [
+                130,
+                155
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Grading and Weighing before Sale",
+              "timing": "1–3 days before market visit",
+              "purpose": "Segregate grain by quality grade to command premium prices and comply with buyer specifications.",
+              "instructions": [
+                "1. Ensure grain moisture is at SAMPLE ≤12 % (mandatory for MSP procurement).",
+                "2. Pass grain through a cleaner to remove admixtures; target foreign matter below SAMPLE 0.5 %.",
+                "3. Weigh bags on a calibrated weighing scale and mark weight on each bag.",
+                "4. Prepare lot samples (~500 g) from each lot for potential quality dispute resolution.",
+                "5. Check for Fair Average Quality (FAQ) specifications of your state procurement agency."
+              ],
+              "materials": [
+                {
+                  "item": "Calibrated platform weighing scale",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit (hired or PACS-owned)",
+                  "note": "Ensure legal-for-trade certification"
+                },
+                {
+                  "item": "Grain cleaner (if additional cleaning needed)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Once per selling batch",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹50 – ₹150",
+                "currency": "INR",
+                "per": "quintal (grading + weighing charges)",
+                "note": "SAMPLE RATE — may be deducted by mandi"
+              },
+              "safety_precautions": [
+                "Ensure weighing scale is certified by Weights & Measures department to avoid disputes.",
+                "Keep duplicate weight records."
+              ],
+              "information_source": "Food Corporation of India (FCI) FAQ specifications. State Procurement Agency procurement guidelines (sample references).",
+              "start_day": 155,
+              "end_day": 158,
+              "day_range": [
+                155,
+                158
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Transportation and Market Sale",
+              "timing": "On the day of market visit / e-NAM auction",
+              "purpose": "Transport grain safely to mandi or buyer location and complete sale with proper documentation.",
+              "instructions": [
+                "1. Load grain bags on a clean, dry vehicle; cover with tarpaulin to prevent moisture exposure.",
+                "2. Carry: Soil Health Card, seed purchase bill, pesticide application records, identity proof, and bank passbook/UPI number.",
+                "3. Register at the mandi gate; obtain token/lot number.",
+                "4. For e-NAM online auction: list lot with quality parameters on e-NAM platform via trader/mandi staff.",
+                "5. Negotiate minimum SAMPLE: MSP as floor price; accept higher if available.",
+                "6. Collect payment preferably via Direct Benefit Transfer (DBT) or cheque — avoid large cash transactions.",
+                "7. Obtain official sale receipt (mandi receipt/bill) for income records and crop insurance claims."
+              ],
+              "materials": [
+                {
+                  "item": "Transport vehicle (tractor-trolley or truck)",
+                  "quantity": "SAMPLE: 1 (hired as needed)",
+                  "unit": "vehicle",
+                  "note": "Clean and dry interior to protect grain"
+                },
+                {
+                  "item": "Tarpaulin cover",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                },
+                {
+                  "item": "Identity proof, bank passbook, seed/purchase bills",
+                  "quantity": "SAMPLE: all documents",
+                  "unit": "set",
+                  "note": "Mandatory for MSP procurement"
+                }
+              ],
+              "frequency": "Once or multiple lots per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹100 – ₹400",
+                "currency": "INR",
+                "per": "quintal (transport + mandi cess + commission)",
+                "note": "SAMPLE RATE — mandi cess is state-specific (typically 1–2 %)"
+              },
+              "safety_precautions": [
+                "Do not overload transport vehicles beyond rated capacity.",
+                "Carry a copy of documents; leave originals at home.",
+                "Be cautious about signing blank receipts or weighment slips."
+              ],
+              "information_source": "eNAM – enam.gov.in. APMC Act (respective state). DAFPW price support scheme guidelines (sample references).",
+              "start_day": 158,
+              "end_day": 165,
+              "day_range": [
+                158,
+                165
+              ],
+              "items": [
+                {
+                  "name": "Mandi transport & loading charges",
+                  "rate_per_acre": 20.0,
+                  "unit": "quintal",
+                  "price_per_unit": 15.0,
+                  "price_type": "BENCHMARK",
+                  "category": "other",
+                  "source": "APMC Mandi Transport Union benchmark"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cost_per_acre": 8000,
+      "yield_per_acre": 20,
+      "price_per_quintal": 2015,
+      "tips": "Ensure adequate irrigation at crown root initiation stage."
+    },
+    {
+      "id": 2,
+      "name": "Rice",
+      "season": "Kharif",
+      "sowing_month": 6,
+      "harvesting_month": 10,
+      "duration_days": 120,
+      "water_need": "High",
+      "soil_type": "Clay",
+      "color": "#6db33f",
+      "short_description": "Paddy rice is the principal Kharif staple grown in flooded or rainfed lowland conditions.",
+      "stages": {
+        "land_preparation": {
+          "stage_number": 1,
+          "stage_name": "Land Preparation",
+          "tasks": [
+            {
+              "task_name": "Puddling (Wet Tillage)",
+              "timing": "1–2 weeks before transplanting, after flooding field",
+              "purpose": "Create an impermeable sub-surface layer to reduce percolation losses; break soil clods for transplanting ease.",
+              "instructions": [
+                "1. Flood field with SAMPLE 5–7 cm of water 5–7 days before puddling.",
+                "2. Carry out 2–3 passes of a puddler (rotavator or cage-wheel tractor) until soil reaches a muddy, paste-like consistency.",
+                "3. Level the puddled field with a wooden plank leveller to ensure uniform water distribution.",
+                "4. Allow the puddled soil to settle for 1–3 days before transplanting.",
+                "5. Maintain 2–3 cm standing water at time of transplanting."
+              ],
+              "materials": [
+                {
+                  "item": "Tractor with cage wheels or power tiller",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "machine",
+                  "note": "Cage wheels prevent compaction"
+                },
+                {
+                  "item": "Irrigation water",
+                  "quantity": "SAMPLE: 5–7 cm",
+                  "unit": "depth per application",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once per season before transplanting",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,500 – ₹2,500",
+                "currency": "INR",
+                "per": "acre (puddling + levelling hire)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Do not operate tractor in standing water deeper than the rated operating depth.",
+                "Ensure stable footing; puddled fields are very slippery."
+              ],
+              "information_source": "IRRI (International Rice Research Institute). 'Rice Production Manual' (sample reference). ICAR-NRRI Cuttack.",
+              "start_day": -14,
+              "end_day": -7,
+              "day_range": [
+                -14,
+                -7
+              ],
+              "items": [
+                {
+                  "name": "Tractor cage-wheel puddling (2 passes) + wooden planking",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 2200.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "machinery",
+                  "source": "CHC Paddy Mechanization tariff"
+                },
+                {
+                  "name": "Agricultural Labour (Bund trimming & water containment)",
+                  "rate_per_acre": 2.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Soil Testing",
+              "timing": "4–6 weeks before nursery sowing; same protocol as Wheat",
+              "purpose": "Assess soil fertility and pH (rice grows best at SAMPLE pH 5.5–6.5 — verify for your variety) to guide fertiliser planning.",
+              "instructions": [
+                "1. Follow same soil sampling procedure as described for Wheat — Soil Testing task.",
+                "2. For rice, specifically request analysis of soil Zn and Fe (common deficiencies in paddy soils).",
+                "3. Use Soil Health Card recommendations for nutrient management."
+              ],
+              "materials": [
+                {
+                  "item": "Soil auger, bucket, polythene bags",
+                  "quantity": "SAMPLE: 1 set",
+                  "unit": "tools",
+                  "note": null
+                }
+              ],
+              "frequency": "Once every 2–3 seasons",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹100 – ₹300",
+                "currency": "INR",
+                "per": "sample (govt. STL)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Use gloves in fields with history of agrochemical use.",
+                "Label samples clearly."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. Soil Health Card Scheme, DAFPW (sample references).",
+              "start_day": -42,
+              "end_day": -28,
+              "day_range": [
+                -42,
+                -28
+              ],
+              "items": []
+            }
+          ]
+        },
+        "seed_selection": {
+          "stage_number": 2,
+          "stage_name": "Seed Selection",
+          "tasks": [
+            {
+              "task_name": "Variety Selection",
+              "timing": "4–6 weeks before nursery sowing",
+              "purpose": "Select a high-yielding, disease-resistant variety suited to local water availability and market preference.",
+              "instructions": [
+                "1. Identify your rice ecology: irrigated lowland, rainfed lowland, upland, or flood-prone.",
+                "2. Choose a recommended variety (SAMPLE: MTU7029 'Swarna', Pusa Basmati-1121, DRR Dhan 44 — verify current state recommendations).",
+                "3. Purchase certified seed from state seed corporation or cooperative.",
+                "4. Check seed tag: germination ≥80 %, physical purity ≥98 %.",
+                "5. Perform salt water floatation test: dissolve SAMPLE 100 g salt in 1 litre water; discard floating seeds."
+              ],
+              "materials": [
+                {
+                  "item": "Certified rice seed",
+                  "quantity": "SAMPLE: 8–10 kg",
+                  "unit": "per acre (transplanted); 20–25 kg for direct-seeded",
+                  "note": "SAMPLE QUANTITY — varies by variety and method"
+                },
+                {
+                  "item": "Common salt for float test",
+                  "quantity": "SAMPLE: 100 g",
+                  "unit": "per litre water",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": null,
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,000 – ₹2,500",
+                "currency": "INR",
+                "per": "acre (seed cost)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Buy seeds from authorised dealers only.",
+                "Keep purchase receipt for insurance purposes."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. State Agriculture Department variety recommendations (sample references).",
+              "start_day": -42,
+              "end_day": -28,
+              "day_range": [
+                -42,
+                -28
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Seed Priming and Treatment",
+              "timing": "24–48 hours before nursery sowing",
+              "purpose": "Improve germination uniformity; protect against seed-borne diseases like blast and false smut.",
+              "instructions": [
+                "1. Soak seeds in clean water for 24 hours; drain and allow to hatch for 24 hours in moist cloth (sprouting).",
+                "2. Treat with a registered fungicide (SAMPLE category: Carbendazim or Tricyclazole — verify CIBRC registration and label dose) to protect against blast disease.",
+                "3. Alternatively, treat with Pseudomonas fluorescens bio-agent per label for organic systems.",
+                "4. Dry seeds in shade for 30 minutes before nursery broadcasting."
+              ],
+              "materials": [
+                {
+                  "item": "Registered fungicide for seed treatment",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per kg seed",
+                  "note": "SAMPLE — do not invent doses"
+                },
+                {
+                  "item": "Clean cloth / gunny bag for sprouting",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Once before nursery sowing",
+              "application_method": "Seed soaking then dust or slurry coating",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹80 – ₹200",
+                "currency": "INR",
+                "per": "acre (chemical cost)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear gloves and mask during fungicide treatment.",
+                "Treated sprouted seed is very slippery — handle carefully.",
+                "Do not eat treated seed or feed to animals."
+              ],
+              "information_source": "CIBRC India. ICAR-NRRI Cuttack. Rice IPM guidelines (sample references).",
+              "start_day": -2,
+              "end_day": -1,
+              "day_range": [
+                -2,
+                -1
+              ],
+              "items": [
+                {
+                  "name": "Nursery bed seed treatment & bio-inoculant inputs",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 250.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "ICAR-NRRI Cuttack Rice Production Technology"
+                }
+              ]
+            }
+          ]
+        },
+        "sowing": {
+          "stage_number": 3,
+          "stage_name": "Sowing / Nursery Raising and Transplanting",
+          "tasks": [
+            {
+              "task_name": "Nursery Bed Preparation and Seeding",
+              "timing": "SAMPLE: Mid-May to mid-June for Kharif rice (vary by state); 25–30 days before main-field transplanting",
+              "purpose": "Raise healthy, uniform seedlings for transplanting; allows main-field preparation to proceed in parallel.",
+              "instructions": [
+                "1. Prepare a SAMPLE 100 sq. metre nursery bed per acre of main field.",
+                "2. Till nursery bed to fine tilth; apply well-decomposed FYM (farm yard manure) at SAMPLE 2 kg per sq. metre.",
+                "3. Form raised beds (width SAMPLE 1–1.5 m, length as per area) with drainage channels between them.",
+                "4. Broadcast sprouted seeds uniformly at SAMPLE 60–80 g per sq. metre.",
+                "5. Cover seeds with a thin layer of soil or ash.",
+                "6. Irrigate gently; maintain thin film of water on nursery surface.",
+                "7. Apply nursery fertiliser (SAMPLE: basal N at label-recommended rate) 5–7 days after sowing."
+              ],
+              "materials": [
+                {
+                  "item": "Well-decomposed FYM",
+                  "quantity": "SAMPLE: 2 kg per sq. metre",
+                  "unit": "kg per sq. m",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "Sprouted certified rice seed",
+                  "quantity": "SAMPLE: 60–80 g per sq. metre",
+                  "unit": "per sq. m",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": "Broadcast sowing on raised nursery beds",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹600 – ₹1,200",
+                "currency": "INR",
+                "per": "acre (nursery prep + inputs)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Protect nursery from birds using nets or scarecrows.",
+                "Monitor nursery for blast infection; spray fungicide if lesions appear."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. IRRI Rice Production Manual (sample references).",
+              "start_day": -30,
+              "end_day": -25,
+              "day_range": [
+                -30,
+                -25
+              ],
+              "items": [
+                {
+                  "name": "Certified Paddy Seed (Transplanted nursery)",
+                  "rate_per_acre": 10.0,
+                  "unit": "kg",
+                  "price_per_unit": 45.0,
+                  "price_type": "OFFICIAL_NSC_TARIFF",
+                  "category": "seed",
+                  "source": "State Seeds Corporation"
+                },
+                {
+                  "name": "Agricultural Labour (Nursery bed management & seedling uprooting)",
+                  "rate_per_acre": 2.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Transplanting",
+              "timing": "SAMPLE: 20–25 day old seedlings; transplant in June–July before monsoon peak; optimum seedling age is variety-specific",
+              "purpose": "Establish uniform, well-spaced crop stand in the puddled main field for high yield potential.",
+              "instructions": [
+                "1. Pull seedlings gently from the nursery; do not damage roots.",
+                "2. Transplant in groups of 2–3 seedlings per hill at SAMPLE spacing 20 cm × 15 cm (row × plant).",
+                "3. Plant seedlings at a depth of SAMPLE 2–3 cm — not too deep (delays tillering) or too shallow (uprooting).",
+                "4. Maintain SAMPLE 2–3 cm standing water in field after transplanting.",
+                "5. Re-plant any missing hills (gaps) within 5–7 days."
+              ],
+              "materials": [
+                {
+                  "item": "25-day-old rice seedlings (from nursery)",
+                  "quantity": "SAMPLE: as produced in nursery",
+                  "unit": "hills",
+                  "note": null
+                },
+                {
+                  "item": "Rope / cord for marking rows (optional)",
+                  "quantity": "SAMPLE: as needed",
+                  "unit": "metres",
+                  "note": "For uniform spacing"
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": "Manual transplanting or mechanical transplanter",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,500 – ₹3,500",
+                "currency": "INR",
+                "per": "acre (transplanting labour)",
+                "note": "SAMPLE RATE — manual labour cost; mechanical transplanter is more economical at scale"
+              },
+              "safety_precautions": [
+                "Workers should wear rubber boots or thick sandals in muddy fields.",
+                "Avoid standing in waterlogged field for extended periods in heat.",
+                "Provide clean drinking water for transplanting crew."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. State Rice Research Stations. IRRI (sample references).",
+              "start_day": 0,
+              "end_day": 0,
+              "day_range": [
+                0,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Agricultural Labour (Manual seedling transplanting crew)",
+                  "rate_per_acre": 6.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "fertilizer_application": {
+          "stage_number": 4,
+          "stage_name": "Fertilizer Application",
+          "tasks": [
+            {
+              "task_name": "Basal Fertilizer Application",
+              "timing": "Just before or during puddling / last harrowing",
+              "purpose": "Supply phosphorus, potassium and a starter nitrogen dose for root and early shoot establishment.",
+              "instructions": [
+                "1. Calculate dose from Soil Health Card; a SAMPLE starting recommendation for rice may be N:P:K at ratio — consult state bulletin.",
+                "2. Apply P and K sources (DAP/SSP and MOP) as basal; incorporate during puddling.",
+                "3. Apply SAMPLE 25–33 % of total N at basal if recommended by state guide.",
+                "4. Broadcast fertiliser uniformly over the puddled field; it will be incorporated by the final puddling pass."
+              ],
+              "materials": [
+                {
+                  "item": "DAP or SSP (phosphorus)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "MOP (potassium)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "Urea (starter N)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once at transplanting",
+              "application_method": "Broadcast and incorporate during puddling",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,500 – ₹3,000",
+                "currency": "INR",
+                "per": "acre (fertiliser cost only)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Apply fertiliser before releasing irrigation water to prevent run-off.",
+                "Do not apply urea in standing water deeper than 5 cm (volatilisation loss)."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. State Dept of Agriculture fertiliser recommendations (sample references).",
+              "start_day": -1,
+              "end_day": 0,
+              "day_range": [
+                -1,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Di-Ammonium Phosphate (DAP 18:46:0)",
+                  "rate_per_acre": 50.0,
+                  "unit": "kg",
+                  "price_per_unit": 27.0,
+                  "price_type": "OFFICIAL_NBS_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "Subsidized NBS market price"
+                },
+                {
+                  "name": "Muriate of Potash (MOP 60% K2O)",
+                  "rate_per_acre": 25.0,
+                  "unit": "kg",
+                  "price_per_unit": 34.0,
+                  "price_type": "OFFICIAL_NBS_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "Subsidized NBS market price"
+                },
+                {
+                  "name": "Zinc Sulphate Heptahydrate (21% Zn)",
+                  "rate_per_acre": 10.0,
+                  "unit": "kg",
+                  "price_per_unit": 45.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "State Agro Industries Corporation"
+                }
+              ]
+            },
+            {
+              "task_name": "Top-Dressing of Nitrogen (Tillering and Panicle Initiation)",
+              "timing": "SAMPLE: At active tillering (20–25 DAT) and at panicle initiation (45–55 DAT) — confirm with state guide",
+              "purpose": "Support maximum productive tiller formation and panicle size — the two key yield components.",
+              "instructions": [
+                "1. Drain field to a thin film or moist condition (not waterlogged) before applying urea to reduce ammonia volatilisation.",
+                "2. Broadcast urea at SAMPLE remaining N split (verify with state recommendation and LCC reading).",
+                "3. Reflood field within 24 hours after application.",
+                "4. Optionally use LCC to confirm N need before applying at panicle initiation stage."
+              ],
+              "materials": [
+                {
+                  "item": "Urea (46 % N)",
+                  "quantity": "SAMPLE: verify with Soil Health Card and LCC reading",
+                  "unit": "kg per acre per split",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "SAMPLE: 2 split applications (tillering + panicle initiation)",
+              "application_method": "Broadcast in shallow-drained field; flood immediately after",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹600 – ₹1,200",
+                "currency": "INR",
+                "per": "acre (both top-dressings combined)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Avoid applying urea during heavy rainfall — run-off and leaching losses.",
+                "Wash hands after handling fertilisers."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. IRRI Rice Nutrient Management (sample references).",
+              "start_day": 20,
+              "end_day": 55,
+              "day_range": [
+                20,
+                55
+              ],
+              "discrete_days": [
+                20,
+                25,
+                45,
+                55
+              ],
+              "items": [
+                {
+                  "name": "Urea (46% N) — Split Top-Dressings",
+                  "rate_per_acre": 115.0,
+                  "unit": "kg",
+                  "price_per_unit": 5.38,
+                  "price_type": "ACTUAL_GOI_MRP",
+                  "category": "fertilizer",
+                  "source": "Statutory MRP notified by Govt. of India"
+                },
+                {
+                  "name": "Agricultural Labour (Fertilizer broadcasting across 2 splits)",
+                  "rate_per_acre": 2.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "irrigation": {
+          "stage_number": 5,
+          "stage_name": "Irrigation / Water Management",
+          "tasks": [
+            {
+              "task_name": "Continuous Flooding (Vegetative Stage)",
+              "timing": "Transplanting to active tillering (0–30 DAT)",
+              "purpose": "Suppress weeds, maintain anaerobic soil conditions, and support transplanting recovery and tiller establishment.",
+              "instructions": [
+                "1. Maintain SAMPLE 2–5 cm standing water from transplanting through vegetative stage.",
+                "2. Monitor field daily; replenish water when level drops below SAMPLE 2 cm.",
+                "3. Drain field briefly if algal mat forms (smothers young plants); refill with fresh water."
+              ],
+              "materials": [
+                {
+                  "item": "Irrigation water (canal or tube-well)",
+                  "quantity": "SAMPLE: maintain 2–5 cm depth",
+                  "unit": "continuous management",
+                  "note": "SAMPLE — high water-use stage"
+                }
+              ],
+              "frequency": "Continuous monitoring and replenishment",
+              "application_method": "Flood irrigation — gravity or pump fed",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹500 – ₹1,200",
+                "currency": "INR",
+                "per": "acre (water/electricity cost for this stage)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Avoid very deep water (>10 cm) which can damage young tillers.",
+                "Check bunds daily; repair breaches promptly."
+              ],
+              "information_source": "IRRI. 'Alternate Wetting and Drying (AWD) for Rice' — water-saving alternative for later stages (sample reference). ICAR-NRRI.",
+              "start_day": 0,
+              "end_day": 30,
+              "day_range": [
+                0,
+                30
+              ],
+              "items": [
+                {
+                  "name": "Irrigation pumping / tube-well energy cess (Vegetative stage 3 events)",
+                  "rate_per_acre": 3.0,
+                  "unit": "events",
+                  "price_per_unit": 350.0,
+                  "price_type": "BENCHMARK",
+                  "category": "irrigation",
+                  "source": "CACP Cost of Cultivation Studies / Tube-well cess"
+                },
+                {
+                  "name": "Agricultural Labour (Water depth management)",
+                  "rate_per_acre": 2.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Alternate Wetting and Drying (AWD) — Water-Saving Method",
+              "timing": "After active tillering (30 DAT) until one week before harvest",
+              "purpose": "Reduce total water consumption by SAMPLE 25–30 % without significant yield loss; also reduces methane emissions.",
+              "instructions": [
+                "1. Install a perforated field water tube (PVC pipe with holes on lower 15 cm) vertically in the field as a water level indicator.",
+                "2. Allow water level to drop to SAMPLE 15 cm below soil surface (safe AWD level for most varieties) before irrigating.",
+                "3. Re-flood to SAMPLE 5 cm above soil surface when the tube shows 15 cm drop.",
+                "4. During sensitive stages (late tillering, panicle initiation, flowering): do NOT allow water table to drop below SAMPLE 5 cm.",
+                "5. Resume continuous flooding 1 week before flowering; stop AWD at maturity for field drying."
+              ],
+              "materials": [
+                {
+                  "item": "Perforated PVC pipe (field water tube)",
+                  "quantity": "SAMPLE: 1 per plot",
+                  "unit": "tube",
+                  "note": "~30 cm long, perforated on lower 15 cm"
+                }
+              ],
+              "frequency": "Cyclic: irrigate when tube shows 15 cm drop",
+              "application_method": "Flood irrigation in cycles based on water tube reading",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹50 – ₹100",
+                "currency": "INR",
+                "per": "season (tube cost only); saves water cost",
+                "note": "SAMPLE RATE — water savings offset higher pump/canal costs"
+              },
+              "safety_precautions": [
+                "Do not apply AWD in fields with sandy soils — percolation too rapid.",
+                "Never allow water table to drop more than recommended during flowering."
+              ],
+              "information_source": "IRRI. 'Alternate Wetting and Drying (AWD)' technology brief. ICAR-NRRI Cuttack (sample references).",
+              "start_day": 30,
+              "end_day": 110,
+              "day_range": [
+                30,
+                110
+              ],
+              "items": [
+                {
+                  "name": "Irrigation pumping / tube-well energy cess (AWD 4 events)",
+                  "rate_per_acre": 4.0,
+                  "unit": "events",
+                  "price_per_unit": 350.0,
+                  "price_type": "BENCHMARK",
+                  "category": "irrigation",
+                  "source": "CACP Cost of Cultivation Studies / Tube-well cess"
+                },
+                {
+                  "name": "Agricultural Labour (Field tube monitoring & irrigation)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "weed_management": {
+          "stage_number": 6,
+          "stage_name": "Weed Management",
+          "tasks": [
+            {
+              "task_name": "Pre-Emergence / Early Post-Emergence Herbicide",
+              "timing": "SAMPLE: 2–5 DAT for pre-emergence; 10–15 DAT for early post-emergence",
+              "purpose": "Control major paddy weeds (Echinochloa spp., Cyperus spp., Monochoria) before they compete with crop.",
+              "instructions": [
+                "1. Drain field to 2–3 cm water before spraying.",
+                "2. Select a CIBRC-registered herbicide for transplanted rice (SAMPLE category: Pretilachlor + safener for pre-emergence, Bispyribac-sodium for post-emergence — verify registration).",
+                "3. Mix per label rate; apply using a knapsack sprayer with a flat-fan nozzle.",
+                "4. After application, maintain 2–3 cm standing water for 3–5 days (do not allow to drain — activates herbicide)."
+              ],
+              "materials": [
+                {
+                  "item": "CIBRC-registered pre/early post-emergence herbicide",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "Knapsack sprayer",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Once (pre) and once (early post) if needed",
+              "application_method": "Spray over shallow water layer or moist soil",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹400 – ₹900",
+                "currency": "INR",
+                "per": "acre per application",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Full PPE mandatory.",
+                "Do not spray on windy days — drift risk to adjacent fields and water bodies.",
+                "Rice herbicides must not reach drainage canals or fish ponds."
+              ],
+              "information_source": "CIBRC India. ICAR-DWR Jabalpur. State Rice Research Station weed management bulletins (sample references).",
+              "start_day": 2,
+              "end_day": 15,
+              "day_range": [
+                2,
+                15
+              ],
+              "items": [
+                {
+                  "name": "Early post-emergence herbicide (Pretilachlor / Bispyribac)",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 550.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "ICAR-NRRI Rice Weed Management"
+                },
+                {
+                  "name": "Agricultural Labour (Herbicide knapsack spray)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Manual Weeding / Conoweeder",
+              "timing": "SAMPLE: 20–25 DAT and 40–45 DAT",
+              "purpose": "Remove surviving weeds; improve soil aeration around roots (beneficial side-effect of mechanical weeding).",
+              "instructions": [
+                "1. Use a conoweeder (rotary weeder) or hand weeder between crop rows.",
+                "2. Push the conoweeder through inter-row spaces; rotating cones uproot weeds.",
+                "3. Incorporate uprooted weeds into the mud — they decompose and add organic matter.",
+                "4. Manual hand-weeding for in-row weeds that conoweeder cannot reach."
+              ],
+              "materials": [
+                {
+                  "item": "Conoweeder or rotary weeder",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool per 2 workers",
+                  "note": null
+                },
+                {
+                  "item": "Labour",
+                  "quantity": "SAMPLE: 6–8",
+                  "unit": "person-days per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Twice — at 20–25 DAT and 40–45 DAT",
+              "application_method": "Mechanical inter-row cultivation in standing water",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹900 – ₹1,800",
+                "currency": "INR",
+                "per": "acre (two rounds of manual weeding)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear rubber boots in flooded fields.",
+                "Leptospirosis risk in stagnant water — avoid cuts on feet and legs.",
+                "Provide rest breaks in hot weather."
+              ],
+              "information_source": "IRRI. ICAR-NRRI Cuttack. Integrated weed management for rice (sample references).",
+              "start_day": 20,
+              "end_day": 45,
+              "day_range": [
+                20,
+                45
+              ],
+              "discrete_days": [
+                20,
+                25,
+                40,
+                45
+              ],
+              "items": [
+                {
+                  "name": "Agricultural Labour (Conoweeder / manual inter-row weeding)",
+                  "rate_per_acre": 2.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "pest_disease_monitoring": {
+          "stage_number": 7,
+          "stage_name": "Pest and Disease Monitoring",
+          "tasks": [
+            {
+              "task_name": "Rice Blast Monitoring and Management",
+              "timing": "SAMPLE: Scouting from 20 DAT onward; risk highest during cool, humid weather",
+              "purpose": "Detect leaf blast and neck blast early; neck blast at panicle emergence can cause 70–100 % loss.",
+              "instructions": [
+                "1. Scout 5 hills at 5 field points; look for diamond-shaped grey-white lesions with brown borders on leaves (leaf blast) or rotting at panicle neck (neck blast).",
+                "2. If leaf blast is found: apply a registered fungicide (SAMPLE category: Tricyclazole or Isoprothiolane — verify CIBRC registration and label dose).",
+                "3. For neck blast prevention: apply protective fungicide at panicle emergence (booting stage) if blast risk is high.",
+                "4. Avoid excessive nitrogen — increases blast susceptibility."
+              ],
+              "materials": [
+                {
+                  "item": "CIBRC-registered fungicide for rice blast",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "Power or knapsack sprayer",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "Scouting: weekly from 20 DAT. Spray: only on disease detection or at booting (preventive if high risk)",
+              "application_method": "Foliar spray covering all leaf surfaces",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹700",
+                "currency": "INR",
+                "per": "acre per spray",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Full PPE required.",
+                "Observe PHI on label before harvesting.",
+                "Report unusual blast spread to district plant protection officer."
+              ],
+              "information_source": "CIBRC India. ICAR-NRRI Cuttack. IRRI Rice Knowledge Bank – blast management (sample references).",
+              "start_day": 20,
+              "end_day": 80,
+              "day_range": [
+                20,
+                80
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Brown Planthopper (BPH) Monitoring",
+              "timing": "SAMPLE: Monitor from 30 DAT to harvest; peak risk at maximum tillering and panicle stages",
+              "purpose": "Prevent 'hopper burn' — mass BPH feeding causes sudden lodging and death of crop patches.",
+              "instructions": [
+                "1. Use a white enamel tray filled with water; tap tillers over it and count BPH falling into tray.",
+                "2. SAMPLE ETL: >10 BPH per hill (verify with state/NCIPM).",
+                "3. If ETL is exceeded: apply a registered insecticide (SAMPLE category: Imidacloprid or Buprofezin — verify CIBRC registration; choose a product that spares natural enemies).",
+                "4. Direct spray toward base of plant (stem region) where BPH feeds.",
+                "5. Avoid blanket spraying which kills natural enemies and triggers BPH resurgence."
+              ],
+              "materials": [
+                {
+                  "item": "White enamel tray",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool",
+                  "note": "For beat-wash scouting"
+                },
+                {
+                  "item": "CIBRC-registered insecticide for BPH",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Scouting: weekly. Treatment: only on ETL",
+              "application_method": "Directed spray at base of tillers",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹600",
+                "currency": "INR",
+                "per": "acre per spray (if needed)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Full PPE when applying insecticide.",
+                "Do not spray neonicotinoids during flowering — bee toxicity risk.",
+                "Observe PHI strictly before harvesting paddy."
+              ],
+              "information_source": "NCIPM. CIBRC India. IRRI Rice Knowledge Bank — BPH management (sample references).",
+              "start_day": 30,
+              "end_day": 110,
+              "day_range": [
+                30,
+                110
+              ],
+              "items": []
+            }
+          ]
+        },
+        "crop_growth_monitoring": {
+          "stage_number": 8,
+          "stage_name": "Crop Growth Monitoring",
+          "tasks": [
+            {
+              "task_name": "Tiller Count and Panicle Monitoring",
+              "timing": "SAMPLE: At 30, 45, 60 DAT and at panicle emergence",
+              "purpose": "Track productive tiller development and flag any growth abnormality for timely corrective action.",
+              "instructions": [
+                "1. Count tillers on 5 hills at 3 field locations at 30 and 45 DAT.",
+                "2. Use LCC to assess N status; top-dress if LCC < SAMPLE 3 (verify).",
+                "3. At panicle initiation (SAMPLE ~50 DAT): confirm crop is entering reproductive phase; ensure water and nutrient supply is adequate.",
+                "4. At heading: count panicles per sq. metre; compare with expected benchmark for the variety.",
+                "5. Record all observations with dates and field map positions."
+              ],
+              "materials": [
+                {
+                  "item": "Leaf Colour Chart (LCC)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "tool",
+                  "note": null
+                },
+                {
+                  "item": "Field notebook / mobile app",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "unit",
+                  "note": null
+                }
+              ],
+              "frequency": "SAMPLE: Every 15 days during vegetative stage; at panicle emergence",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil to ₹50",
+                "currency": "INR",
+                "per": "per observation",
+                "note": null
+              },
+              "safety_precautions": [
+                "Wear rubber boots in flooded fields.",
+                "Watch for snakes when scouting in tall crop."
+              ],
+              "information_source": "IRRI. ICAR-NRRI. LCC methodology for rice (sample references).",
+              "start_day": 30,
+              "end_day": 75,
+              "day_range": [
+                30,
+                75
+              ],
+              "discrete_days": [
+                30,
+                45,
+                60,
+                75
+              ],
+              "items": []
+            }
+          ]
+        },
+        "harvesting": {
+          "stage_number": 9,
+          "stage_name": "Harvesting",
+          "tasks": [
+            {
+              "task_name": "Harvest Timing and Field Drying",
+              "timing": "SAMPLE: 25–30 days after 80 % heading; when SAMPLE 85 % of grains in a panicle are golden-yellow",
+              "purpose": "Harvest at optimal maturity to minimise shattering losses and ensure good milling quality.",
+              "instructions": [
+                "1. Drain field 7–10 days before harvest to allow field to dry for mechanisation.",
+                "2. Visually assess crop: ~85 % panicles golden yellow; grain at SAMPLE 18–22 % moisture (verify with meter).",
+                "3. Do not delay harvest — over-ripe grain shatters and has poor milling quality.",
+                "4. Arrange combine harvester or sickles in advance."
+              ],
+              "materials": [
+                {
+                  "item": "Grain moisture meter",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "instrument",
+                  "note": "Borrow from KVK"
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil",
+                "currency": "INR",
+                "per": "assessment only",
+                "note": null
+              },
+              "safety_precautions": [
+                "Confirm field is dry enough for mechanical entry before calling combine.",
+                "Watch for snakes disturbed by harvesting activity."
+              ],
+              "information_source": "IRRI. FAO Post-harvest grain guidelines. ICAR-NRRI (sample references).",
+              "start_day": 110,
+              "end_day": 115,
+              "day_range": [
+                110,
+                115
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Mechanical or Manual Harvesting",
+              "timing": "At optimum maturity (SAMPLE: October–November for Kharif)",
+              "purpose": "Harvest paddy grain with minimum field losses; reduce drudgery.",
+              "instructions": [
+                "1. For combine: set cutting height at SAMPLE 20–25 cm; ensure concave and cylinder settings are correct for paddy.",
+                "2. For manual: cut crop with sickles at SAMPLE 15–20 cm above ground; bundle and leave to sun-dry 2–3 days in field.",
+                "3. Collect paddy in clean bags or tarpaulin-lined trolleys.",
+                "4. Never burn paddy straw — use for fodder, mulch, vermicomposting or biochar."
+              ],
+              "materials": [
+                {
+                  "item": "Combine harvester (hired) or sickles",
+                  "quantity": "SAMPLE: as required by area",
+                  "unit": "machines / tools",
+                  "note": null
+                },
+                {
+                  "item": "Clean HDPE bags or tarpaulin",
+                  "quantity": "SAMPLE: as required by yield",
+                  "unit": "units",
+                  "note": null
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,500 – ₹2,500",
+                "currency": "INR",
+                "per": "acre (combine hire or labour)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Keep bystanders away from operating combine.",
+                "Manual harvesters should wear gloves — sickles are sharp.",
+                "Do not burn straw — illegal in several states; causes air pollution and health hazards."
+              ],
+              "information_source": "ICAR-NRRI Cuttack. CFMTTI Budni. IRRI (sample references).",
+              "start_day": 118,
+              "end_day": 122,
+              "day_range": [
+                118,
+                122
+              ],
+              "items": [
+                {
+                  "name": "Track-type combine harvester contract for paddy",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 2200.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "harvesting",
+                  "source": "Paddy Harvester Custom Hiring Tariff"
+                }
+              ]
+            }
+          ]
+        },
+        "post_harvest_handling": {
+          "stage_number": 10,
+          "stage_name": "Post-Harvest Handling",
+          "tasks": [
+            {
+              "task_name": "Threshing and Sun-Drying",
+              "timing": "Within 1–2 days of harvesting",
+              "purpose": "Separate paddy grains from panicles; dry to safe storage moisture to prevent mycotoxin formation.",
+              "instructions": [
+                "1. Thresh paddy using a power thresher or axial flow thresher; avoid over-threshing which breaks grains.",
+                "2. Spread paddy on clean tarpaulin in direct sunlight; target SAMPLE ≤14 % moisture for milling (≤12 % for long storage).",
+                "3. Rake and turn every 2–3 hours; cover at night or if rain threatens.",
+                "4. Check moisture with meter before bagging."
+              ],
+              "materials": [
+                {
+                  "item": "Power thresher or pedal thresher",
+                  "quantity": "SAMPLE: 1 (hired)",
+                  "unit": "machine",
+                  "note": null
+                },
+                {
+                  "item": "Clean tarpaulin",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "sq. metres",
+                  "note": null
+                },
+                {
+                  "item": "Grain moisture meter",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "instrument",
+                  "note": null
+                }
+              ],
+              "frequency": "Once after harvest",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹700",
+                "currency": "INR",
+                "per": "acre (threshing hire + labour)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Keep hands away from rotating thresher drum.",
+                "Wear ear protection near loud power threshers.",
+                "Dust masks required during threshing."
+              ],
+              "information_source": "FAO. ICAR-CIAE Bhopal post-harvest machinery guidelines (sample references).",
+              "start_day": 121,
+              "end_day": 123,
+              "day_range": [
+                121,
+                123
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Storage",
+              "timing": "After drying to safe moisture",
+              "purpose": "Maintain grain quality and prevent insect/fungal damage during storage pending sale or milling.",
+              "instructions": [
+                "1. Store dried paddy in HDPE bags on pallets in a ventilated, rodent-proof godown.",
+                "2. Apply CIBRC-registered grain protectant per label (if needed for extended storage).",
+                "3. Monitor monthly for insect, moisture or fungal problems.",
+                "4. For self-consumption rice: mill in small lots to avoid milled rice going stale."
+              ],
+              "materials": [
+                {
+                  "item": "HDPE woven bags (50 kg)",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "bags",
+                  "note": null
+                },
+                {
+                  "item": "Grain protectant (CIBRC-approved)",
+                  "quantity": "SAMPLE: per label",
+                  "unit": "per quintal stored",
+                  "note": "SAMPLE — only if extended storage planned"
+                }
+              ],
+              "frequency": "Initial treatment + monthly inspection",
+              "application_method": "Dust admixture or fumigation (by licensed operator)",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹700",
+                "currency": "INR",
+                "per": "quintal (bags + protectant)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Fumigation only by licensed fumigator.",
+                "Keep protectant products away from food, children and pets."
+              ],
+              "information_source": "FCI grain storage manual. CWC guidelines. CIBRC registered products list (sample references).",
+              "start_day": 123,
+              "end_day": 130,
+              "day_range": [
+                123,
+                130
+              ],
+              "items": [
+                {
+                  "name": "Packaging storage bags (50 kg HDPE woven bags)",
+                  "rate_per_acre": 44.0,
+                  "unit": "bags",
+                  "price_per_unit": 28.0,
+                  "price_type": "BENCHMARK",
+                  "category": "other",
+                  "source": "Packaging Industry Benchmark (22 qtl yield * 2 bags/qtl)"
+                },
+                {
+                  "name": "Agricultural Labour (Bag filling, stitching & stacking)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "selling_produce": {
+          "stage_number": 11,
+          "stage_name": "Selling the Produce",
+          "tasks": [
+            {
+              "task_name": "Price Discovery and Channel Selection",
+              "timing": "2–4 weeks before sale",
+              "purpose": "Identify best market and timing to maximise net returns on paddy.",
+              "instructions": [
+                "1. Check current MSP for paddy (common grade and Grade A) on CACP/DAFPW website.",
+                "2. Compare APMC mandi prices, rice miller direct purchase prices, and Custom Milling Rice (CMR) procurement prices from state civil supplies department.",
+                "3. Evaluate e-NAM platform listing for better price discovery.",
+                "4. Join or work with a Farmer Producer Organisation (FPO) for collective negotiation."
+              ],
+              "materials": [
+                {
+                  "item": "Smartphone / internet access",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "device",
+                  "note": null
+                }
+              ],
+              "frequency": "Ongoing pre-harvest",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil – ₹50",
+                "currency": "INR",
+                "per": "data cost only",
+                "note": null
+              },
+              "safety_precautions": [
+                "Do not sell paddy below MSP; report violations to local agriculture officer.",
+                "Avoid pre-harvest advances from unregistered moneylenders."
+              ],
+              "information_source": "CACP. Agmarknet. eNAM. State Food and Civil Supplies Department (sample references).",
+              "start_day": 105,
+              "end_day": 125,
+              "day_range": [
+                105,
+                125
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Grading, Weighing and Sale",
+              "timing": "On day of or 1–2 days before market sale",
+              "purpose": "Ensure paddy meets FAQ specifications for MSP procurement; secure fair price.",
+              "instructions": [
+                "1. Ensure moisture ≤SAMPLE 17 % (FAQ moisture for paddy procurement — verify state spec).",
+                "2. Clean paddy to remove admixtures; target <SAMPLE 1.5 % foreign matter.",
+                "3. Weigh and bag; transport to mandi or procurement centre with all required documents.",
+                "4. Obtain official sale/delivery receipt; ensure payment via DBT within specified timelines.",
+                "5. Retain records for PM-KISAN and crop insurance documentation."
+              ],
+              "materials": [
+                {
+                  "item": "Calibrated weighing scale, HDPE bags, transport vehicle, documents",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "set",
+                  "note": null
+                }
+              ],
+              "frequency": "Once or multiple lots",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹80 – ₹300",
+                "currency": "INR",
+                "per": "quintal (transport + mandi charges)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Carry duplicate copies of all documents.",
+                "Use calibrated, certified weighing scales only."
+              ],
+              "information_source": "FCI. State Food and Civil Supplies Corporations. eNAM – enam.gov.in (sample references).",
+              "start_day": 125,
+              "end_day": 135,
+              "day_range": [
+                125,
+                135
+              ],
+              "items": [
+                {
+                  "name": "Mandi transport & loading charges",
+                  "rate_per_acre": 22.0,
+                  "unit": "quintal",
+                  "price_per_unit": 15.0,
+                  "price_type": "BENCHMARK",
+                  "category": "other",
+                  "source": "APMC Mandi Transport Union benchmark"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cost_per_acre": 12000,
+      "yield_per_acre": 22,
+      "price_per_quintal": 2183,
+      "tips": "Maintain 2-5 cm standing water during vegetative stage."
+    },
+    {
+      "id": 3,
+      "name": "Maize",
+      "season": "Kharif",
+      "sowing_month": 6,
+      "harvesting_month": 9,
+      "duration_days": 90,
+      "water_need": "Medium",
+      "soil_type": "Sandy Loam",
+      "color": "#ffa500",
+      "short_description": "Maize is a versatile Kharif crop grown for grain, fodder, and industrial uses; relatively drought-tolerant after establishment.",
+      "stages": {
+        "land_preparation": {
+          "stage_number": 1,
+          "stage_name": "Land Preparation",
+          "tasks": [
+            {
+              "task_name": "Primary and Secondary Tillage",
+              "timing": "2–3 weeks before sowing; after last rains soften the field",
+              "purpose": "Create a well-aerated, clod-free seed-bed; break hard pan; incorporate crop residues.",
+              "instructions": [
+                "1. Deep plough to SAMPLE 20–25 cm depth with mould-board plough.",
+                "2. Harrow 2 times with disc harrow to break clods.",
+                "3. Level the field with leveller to ensure uniform rain-water distribution.",
+                "4. Form ridges and furrows at SAMPLE 60–75 cm spacing for row sowing (optional for slope management)."
+              ],
+              "materials": [
+                {
+                  "item": "Tractor + mould-board plough + disc harrow",
+                  "quantity": "SAMPLE: 1 set (hired)",
+                  "unit": "machines",
+                  "note": null
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,000 – ₹1,800",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Standard tractor safety — keep bystanders clear.",
+                "Wear dust mask during dry harrowing."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. 'Maize Production Technology' (sample reference). State Department of Agriculture.",
+              "start_day": -21,
+              "end_day": -14,
+              "day_range": [
+                -21,
+                -14
+              ],
+              "items": [
+                {
+                  "name": "Tractor disc ploughing & harrowing for fine tilth",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 1600.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "machinery",
+                  "source": "CHC Farm Machinery benchmark"
+                },
+                {
+                  "name": "Agricultural Labour (Field preparation & levelling)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Soil Testing",
+              "timing": "4–6 weeks before sowing",
+              "purpose": "Determine soil fertility and pH; maize grows best at SAMPLE pH 6.0–7.5 (verify for your soil).",
+              "instructions": [
+                "1. Follow the same soil sampling procedure as described for Wheat.",
+                "2. For maize, specifically request Zn and B analysis — common deficiencies in maize-growing soils.",
+                "3. Plan fertiliser doses based on Soil Health Card recommendations."
+              ],
+              "materials": [
+                {
+                  "item": "Soil sampling tools (auger, bucket, bags)",
+                  "quantity": "SAMPLE: 1 set",
+                  "unit": "tools",
+                  "note": null
+                }
+              ],
+              "frequency": "Once every 2–3 years",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹100 – ₹300",
+                "currency": "INR",
+                "per": "sample",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Standard sample collection hygiene — gloves and labelling."
+              ],
+              "information_source": "ICAR-IIMR. Soil Health Card Scheme (sample references).",
+              "start_day": -42,
+              "end_day": -28,
+              "day_range": [
+                -42,
+                -28
+              ],
+              "items": []
+            }
+          ]
+        },
+        "seed_selection": {
+          "stage_number": 2,
+          "stage_name": "Seed Selection",
+          "tasks": [
+            {
+              "task_name": "Hybrid or OPV Selection",
+              "timing": "3–4 weeks before sowing",
+              "purpose": "Select the right variety for the end use: grain, fodder, baby corn, popcorn or sweet corn, and for local disease pressure.",
+              "instructions": [
+                "1. Identify end use and market: grain maize, baby corn, sweet corn or fodder.",
+                "2. Choose a CIBRC-recommended hybrid or OPV (SAMPLE: HQPM-1, DHM-117 for quality protein maize; verify current recommendations).",
+                "3. Purchase certified hybrid seed from authorised dealers — never save and resow hybrid seed.",
+                "4. Check seed tag for: germination ≥90 %, physical purity ≥98 %, moisture ≤12 %."
+              ],
+              "materials": [
+                {
+                  "item": "Certified hybrid or OPV maize seed",
+                  "quantity": "SAMPLE: 8–10 kg",
+                  "unit": "per acre",
+                  "note": "SAMPLE QUANTITY — varies by variety"
+                }
+              ],
+              "frequency": null,
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹700 – ₹2,500",
+                "currency": "INR",
+                "per": "acre (seed cost; hybrids are costlier than OPVs)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Do not resow hybrid seed — F2 generation shows severe yield decline.",
+                "Keep purchase receipts for insurance claims."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. State Variety Approval Committees (sample references).",
+              "start_day": -28,
+              "end_day": -21,
+              "day_range": [
+                -28,
+                -21
+              ],
+              "items": []
+            },
+            {
+              "task_name": "Seed Treatment",
+              "timing": "24 hours before sowing",
+              "purpose": "Protect seeds against seed-borne fungi (e.g., Pythium, smut) and soil-borne damping-off.",
+              "instructions": [
+                "1. Treat seed with a registered fungicide (SAMPLE category: Thiram or Metalaxyl + Mancozeb combination — verify CIBRC and label dose).",
+                "2. Optionally add Azospirillum or PSB (Phosphate Solubilising Bacteria) bio-inoculant as second coating after chemical treatment dries.",
+                "3. Dry treated seeds in shade for 30 minutes before sowing."
+              ],
+              "materials": [
+                {
+                  "item": "CIBRC-registered fungicide (seed treatment grade)",
+                  "quantity": "SAMPLE: per product label",
+                  "unit": "per kg seed",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "Azospirillum bio-inoculant (optional)",
+                  "quantity": "SAMPLE: per label",
+                  "unit": "per kg seed",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once before sowing",
+              "application_method": "Dry seed coating",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹80 – ₹180",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear PPE: gloves, mask.",
+                "Keep treated seeds away from food, children and animals.",
+                "Treated seed must not be sold or used for food/feed."
+              ],
+              "information_source": "CIBRC India. ICAR-IIMR Maize Production Technology (sample references).",
+              "start_day": -1,
+              "end_day": 0,
+              "day_range": [
+                -1,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Fungicide + Azospirillum bio-inoculant seed treatment",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 180.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "ICAR-IIMR Maize Package of Practices"
+                },
+                {
+                  "name": "Agricultural Labour (Seed treatment & drying)",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "sowing": {
+          "stage_number": 3,
+          "stage_name": "Sowing",
+          "tasks": [
+            {
+              "task_name": "Line Sowing",
+              "timing": "SAMPLE: Mid-June to first week of July for Kharif (after first good monsoon showers); verify state window",
+              "purpose": "Achieve recommended plant population for maximum yield; uniform spacing improves light interception and weeding efficiency.",
+              "instructions": [
+                "1. Sow using a tractor-mounted maize planter or manually with a dibblers tool.",
+                "2. Row spacing: SAMPLE 60–75 cm; plant-to-plant spacing: SAMPLE 20–25 cm (adjust for variety/hybrid).",
+                "3. Seeding depth: SAMPLE 3–5 cm in moist soil.",
+                "4. Place basal fertiliser in-furrow 2–3 cm below and beside the seed (avoid direct seed-fertiliser contact).",
+                "5. Light soil coverage after sowing; do not compact excessively."
+              ],
+              "materials": [
+                {
+                  "item": "Maize planter or dibbler tool",
+                  "quantity": "SAMPLE: 1 (hired or owned)",
+                  "unit": "implement",
+                  "note": null
+                },
+                {
+                  "item": "Treated certified maize seed",
+                  "quantity": "SAMPLE: 8–10 kg",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once at beginning of crop cycle",
+              "application_method": "Line sowing with mechanical planter or manual dibbling",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹400 – ₹800",
+                "currency": "INR",
+                "per": "acre (sowing hire + fuel)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Do not sow into waterlogged soil — risk of damping off.",
+                "Clear blocked planter tubes regularly; never with hands while machine is running."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. State Agriculture Department maize package of practices (sample references).",
+              "start_day": 0,
+              "end_day": 0,
+              "day_range": [
+                0,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Certified Single-Cross Hybrid Maize Seed",
+                  "rate_per_acre": 8.0,
+                  "unit": "kg",
+                  "price_per_unit": 220.0,
+                  "price_type": "OFFICIAL_NSC_TARIFF",
+                  "category": "seed",
+                  "source": "ICAR-IIMR / NSC Certified Hybrid tariff"
+                },
+                {
+                  "name": "Tractor-mounted precision maize planter line sowing",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 600.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "machinery",
+                  "source": "CHC Maize Planter tariff"
+                },
+                {
+                  "name": "Agricultural Labour (Sowing assistance)",
+                  "rate_per_acre": 0.5,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "fertilizer_application": {
+          "stage_number": 4,
+          "stage_name": "Fertilizer Application",
+          "tasks": [
+            {
+              "task_name": "Basal Fertilizer at Sowing",
+              "timing": "At sowing, placed in furrow below seed",
+              "purpose": "Supply P and K from day one; starter N for early vigour.",
+              "instructions": [
+                "1. Apply DAP or SSP (P source) + MOP (K source) as basal per Soil Health Card dose.",
+                "2. Place in planting furrow 2–3 cm below and beside seed using planter fertiliser box.",
+                "3. Cover with soil before placing seed to avoid seed burning."
+              ],
+              "materials": [
+                {
+                  "item": "DAP or SSP",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE"
+                },
+                {
+                  "item": "MOP",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once at sowing",
+              "application_method": "In-furrow placement via planter",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹1,000 – ₹2,000",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Avoid direct seed-fertiliser contact.",
+                "Wear gloves and dust mask."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. FAI fertiliser management guides (sample references).",
+              "start_day": 0,
+              "end_day": 0,
+              "day_range": [
+                0,
+                0
+              ],
+              "items": [
+                {
+                  "name": "Di-Ammonium Phosphate (DAP 18:46:0)",
+                  "rate_per_acre": 55.0,
+                  "unit": "kg",
+                  "price_per_unit": 27.0,
+                  "price_type": "OFFICIAL_NBS_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "Subsidized NBS market price"
+                },
+                {
+                  "name": "Muriate of Potash (MOP 60% K2O)",
+                  "rate_per_acre": 25.0,
+                  "unit": "kg",
+                  "price_per_unit": 34.0,
+                  "price_type": "OFFICIAL_NBS_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "Subsidized NBS market price"
+                },
+                {
+                  "name": "Zinc Sulphate Heptahydrate (21% Zn)",
+                  "rate_per_acre": 10.0,
+                  "unit": "kg",
+                  "price_per_unit": 45.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "fertilizer",
+                  "source": "State Agro Industries Corporation"
+                }
+              ]
+            },
+            {
+              "task_name": "Nitrogen Top-Dressing (Knee-High / Pre-Tassel)",
+              "timing": "SAMPLE: at V5–V6 stage ('knee-high', ~25–30 DAS) and at pre-tassel (VT stage, ~50–55 DAS)",
+              "purpose": "Nitrogen at knee-high drives rapid vegetative growth; at VT stage supports ear development and grain fill.",
+              "instructions": [
+                "1. At knee-high (~25–30 DAS): broadcast urea between crop rows per recommended dose split; immediately incorporate by irrigation or rain.",
+                "2. At pre-tassel (VT, ~50–55 DAS): apply remaining N as top-dress; avoid spraying urea solution on tassels.",
+                "3. Use LCC to guide top-dressing decision at each stage."
+              ],
+              "materials": [
+                {
+                  "item": "Urea (46 % N)",
+                  "quantity": "SAMPLE: verify with Soil Health Card",
+                  "unit": "kg per acre per split",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "SAMPLE: 2 top-dressings (knee-high + pre-tassel)",
+              "application_method": "Broadcast between rows; follow with irrigation or rain",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹500 – ₹1,000",
+                "currency": "INR",
+                "per": "acre (both splits)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Do not allow urea granules to fall into whorls of young plants — tip burn risk.",
+                "Wash hands after handling."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. Maize agronomy package of practices (sample references).",
+              "start_day": 25,
+              "end_day": 55,
+              "day_range": [
+                25,
+                55
+              ],
+              "discrete_days": [
+                25,
+                30,
+                50,
+                55
+              ],
+              "items": [
+                {
+                  "name": "Urea (46% N) — Split Top-Dressings",
+                  "rate_per_acre": 110.0,
+                  "unit": "kg",
+                  "price_per_unit": 5.38,
+                  "price_type": "ACTUAL_GOI_MRP",
+                  "category": "fertilizer",
+                  "source": "Statutory MRP notified by Govt. of India"
+                },
+                {
+                  "name": "Agricultural Labour (Fertilizer side-dressing across 2 splits)",
+                  "rate_per_acre": 1.5,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "irrigation": {
+          "stage_number": 5,
+          "stage_name": "Irrigation",
+          "tasks": [
+            {
+              "task_name": "Irrigation at Critical Growth Stages",
+              "timing": "SAMPLE: At sowing (if soil dry), knee-high stage (~30 DAS), tasselling/silking (~55 DAS), and grain filling (~70 DAS)",
+              "purpose": "Maize is highly sensitive to water stress at tasselling and silking — even 3–4 days of stress at this stage can cause 50 % yield loss.",
+              "instructions": [
+                "1. Irrigate at sowing only if soil moisture is below field capacity.",
+                "2. Monitor soil moisture: irrigate when top 15 cm feels dry.",
+                "3. At tasselling/silking: DO NOT allow any moisture stress — apply SAMPLE 5 cm irrigation; this is the most critical stage.",
+                "4. At grain filling: apply SAMPLE 4–5 cm irrigation; stops at physiological maturity (black layer formation).",
+                "5. Furrow irrigation is preferred over flood to avoid water-logging on sandy loam soils."
+              ],
+              "materials": [
+                {
+                  "item": "Irrigation water (furrow or sprinkler)",
+                  "quantity": "SAMPLE: 4–5 cm per application",
+                  "unit": "per irrigation event",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "SAMPLE: 4–5 irrigations per season (if rainfall insufficient)",
+              "application_method": "Furrow irrigation (preferred) or sprinkler",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹700 – ₹1,500",
+                "currency": "INR",
+                "per": "acre (full season irrigation)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Avoid water-logging on sandy loam — causes root rot.",
+                "Do not irrigate when strong winds risk lodging at tasselling."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. Maize Water Management guidelines (sample references).",
+              "start_day": 0,
+              "end_day": 70,
+              "day_range": [
+                0,
+                70
+              ],
+              "discrete_days": [
+                0,
+                30,
+                55,
+                70
+              ],
+              "items": [
+                {
+                  "name": "Irrigation pumping electricity/diesel (4 critical events)",
+                  "rate_per_acre": 4.0,
+                  "unit": "events",
+                  "price_per_unit": 350.0,
+                  "price_type": "BENCHMARK",
+                  "category": "irrigation",
+                  "source": "CACP Cost of Cultivation Studies / Tube-well cess"
+                },
+                {
+                  "name": "Agricultural Labour (Irrigation supervision across 4 events)",
+                  "rate_per_acre": 1.5,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "weed_management": {
+          "stage_number": 6,
+          "stage_name": "Weed Management",
+          "tasks": [
+            {
+              "task_name": "Pre-Emergence Herbicide",
+              "timing": "SAMPLE: 1–3 days after sowing, before crop and weed emergence",
+              "purpose": "Prevent early-season weed competition during the critical first 30 days when maize is most sensitive to weed pressure.",
+              "instructions": [
+                "1. Apply a CIBRC-registered pre-emergence herbicide for maize (SAMPLE category: Atrazine — verify registration, dose from label).",
+                "2. Ensure adequate soil moisture before spraying for herbicide activation.",
+                "3. Spray uniformly over soil surface with flat-fan nozzle within 3 days of sowing."
+              ],
+              "materials": [
+                {
+                  "item": "CIBRC-registered pre-emergence herbicide",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Once at sowing",
+              "application_method": "Uniform soil spray with flat-fan nozzle",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹600",
+                "currency": "INR",
+                "per": "acre",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Full PPE mandatory.",
+                "Atrazine (if used) has soil persistence — check label for crop rotation restrictions.",
+                "Do not spray near water bodies."
+              ],
+              "information_source": "CIBRC India. ICAR-DWR Jabalpur. ICAR-IIMR Hyderabad (sample references).",
+              "start_day": 1,
+              "end_day": 3,
+              "day_range": [
+                1,
+                3
+              ],
+              "items": [
+                {
+                  "name": "Atrazine pre-emergence herbicide spray",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 400.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "ICAR-IIMR Weed Management Guide"
+                },
+                {
+                  "name": "Agricultural Labour (Herbicide knapsack spray)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            },
+            {
+              "task_name": "Interculture / Manual Weeding",
+              "timing": "SAMPLE: 20–25 DAS and 40–45 DAS",
+              "purpose": "Remove surviving weeds; earthing up simultaneously strengthens plant support and reduces lodging.",
+              "instructions": [
+                "1. Use a tractor-mounted inter-row cultivator or bullock-drawn plough at 20–25 DAS for first weeding + earthing up.",
+                "2. Second manual weeding with khurpi at 40–45 DAS for any remaining weeds.",
+                "3. Combine earthing up (ridging soil around base of plants) with second weeding to improve stability."
+              ],
+              "materials": [
+                {
+                  "item": "Inter-row cultivator or bullock plough",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "implement",
+                  "note": null
+                },
+                {
+                  "item": "Labour / khurpi for hand weeding",
+                  "quantity": "SAMPLE: 3–5",
+                  "unit": "person-days per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Twice — 20–25 DAS and 40–45 DAS",
+              "application_method": "Mechanical inter-cultivation + manual hand weeding",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹500 – ₹1,000",
+                "currency": "INR",
+                "per": "acre (both rounds)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear gloves and sturdy footwear.",
+                "Second earthing up before tasselling reduces risk of stalk lodging in wind."
+              ],
+              "information_source": "ICAR-IIMR. ICAR-DWR Jabalpur. Maize package of practices (sample references).",
+              "start_day": 20,
+              "end_day": 45,
+              "day_range": [
+                20,
+                45
+              ],
+              "discrete_days": [
+                20,
+                25,
+                40,
+                45
+              ],
+              "items": [
+                {
+                  "name": "Agricultural Labour (Interculture weeding & hoeing)",
+                  "rate_per_acre": 2.0,
+                  "unit": "worker-days",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "pest_disease_monitoring": {
+          "stage_number": 7,
+          "stage_name": "Pest and Disease Monitoring",
+          "tasks": [
+            {
+              "task_name": "Fall Armyworm (FAW) Monitoring and Management",
+              "timing": "SAMPLE: Weekly scouting from 10 DAS to VT stage (tasselling); peak risk at 20–40 DAS",
+              "purpose": "Fall Armyworm (Spodoptera frugiperda) is a highly destructive invasive pest; early detection prevents economic damage.",
+              "instructions": [
+                "1. Scout 10 plants per 5 field spots; check central whorl for fresh window-pane feeding, frass (sawdust-like excrement) or live larvae.",
+                "2. SAMPLE ETL: >10 % infested plants with live larvae (verify with NCIPM/state advisory).",
+                "3. Use pheromone traps (SAMPLE: 1 trap per acre) for early detection monitoring.",
+                "4. If ETL reached: apply a CIBRC-registered insecticide (SAMPLE category: Chlorantraniliprole or Emamectin benzoate — verify label; direct spray into whorl).",
+                "5. Apply spray into the whorl (not over the canopy) for maximum efficacy."
+              ],
+              "materials": [
+                {
+                  "item": "FAW pheromone lure + trap",
+                  "quantity": "SAMPLE: 1 per acre",
+                  "unit": "traps",
+                  "note": "For monitoring only; replace lure per manufacturer's schedule"
+                },
+                {
+                  "item": "CIBRC-registered insecticide for FAW",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Scouting: weekly. Treatment: on ETL",
+              "application_method": "Directed whorl spray with knapsack sprayer",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹200 – ₹600",
+                "currency": "INR",
+                "per": "acre per spray (if needed)",
+                "note": "SAMPLE RATE — pheromone trap: SAMPLE ₹50–₹150 per trap"
+              },
+              "safety_precautions": [
+                "Full PPE when applying insecticides.",
+                "FAW can develop resistance quickly — rotate insecticide mode of action.",
+                "Observe PHI on product label before harvest.",
+                "Report first detection of FAW in new areas to local plant protection officer."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. NCIPM New Delhi. FAO FAW Integrated Management Guidelines. CIBRC India (sample references).",
+              "start_day": 10,
+              "end_day": 55,
+              "day_range": [
+                10,
+                55
+              ],
+              "items": [
+                {
+                  "name": "Fall Armyworm (FAW) pheromone lure & trap monitoring",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 250.0,
+                  "price_type": "OFFICIAL_BENCHMARK",
+                  "category": "other",
+                  "source": "NCIPM / ICAR-IIMR IPM Bulletin"
+                }
+              ]
+            },
+            {
+              "task_name": "Turcicum Leaf Blight and Maydis Blight Monitoring",
+              "timing": "SAMPLE: Monitor from 30 DAS onward; risk increases with high humidity and canopy closure",
+              "purpose": "Leaf blights reduce photosynthetic area and can cause significant grain yield loss in susceptible varieties.",
+              "instructions": [
+                "1. Scout crop at 5 field spots; look for large tan-coloured elliptical lesions on lower/upper leaves (Turcicum) or smaller, irregular yellowish lesions (Maydis).",
+                "2. If disease present on >5 % leaf area on lower leaves before tasselling: apply registered fungicide (SAMPLE category: Mancozeb or Azoxystrobin — verify CIBRC and label dose).",
+                "3. Ensure good canopy air movement by avoiding excessive plant density."
+              ],
+              "materials": [
+                {
+                  "item": "CIBRC-registered fungicide for maize blight",
+                  "quantity": "SAMPLE: per product label only",
+                  "unit": "per acre",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Scouting: weekly from 30 DAS. Spray: only on confirmed disease",
+              "application_method": "Foliar spray covering both leaf surfaces",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹600",
+                "currency": "INR",
+                "per": "acre per spray (if needed)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Wear PPE when spraying fungicides.",
+                "Observe PHI on label before harvest."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. CIBRC India. State Plant Protection departments (sample references).",
+              "start_day": 30,
+              "end_day": 75,
+              "day_range": [
+                30,
+                75
+              ],
+              "items": []
+            }
+          ]
+        },
+        "crop_growth_monitoring": {
+          "stage_number": 8,
+          "stage_name": "Crop Growth Monitoring",
+          "tasks": [
+            {
+              "task_name": "Plant Population and Canopy Assessment",
+              "timing": "SAMPLE: At 10–12 DAS (germination check), 30 DAS (V5–V6 stage), and at tasselling (VT stage)",
+              "purpose": "Ensure adequate plant population throughout the season; detect and correct any nutrient, moisture or pest-related abnormalities.",
+              "instructions": [
+                "1. At 10–12 DAS: count germinated plants in 3 random 5-metre rows; calculate plants per acre.",
+                "2. SAMPLE benchmark: target SAMPLE 22,000–27,000 plants per acre for hybrid maize (verify for your variety).",
+                "3. Gap-fill within 10–12 DAS if >10 % missing hills.",
+                "4. At VT stage: check for good ear placement, tassel development and silk emergence; any asymmetry may indicate nutrient or water stress."
+              ],
+              "materials": [
+                {
+                  "item": "Measuring tape, notebook / app",
+                  "quantity": "SAMPLE: 1 set",
+                  "unit": "tools",
+                  "note": null
+                }
+              ],
+              "frequency": "SAMPLE: 3 observations during the season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: Nil",
+                "currency": "INR",
+                "per": "observation (farmer's time)",
+                "note": null
+              },
+              "safety_precautions": [
+                "Maize leaves have sharp edges — wear full-sleeve clothing when scouting in tall crop.",
+                "Watch for snakes at crop base."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. Maize growth stage identification guides (sample references).",
+              "start_day": 10,
+              "end_day": 60,
+              "day_range": [
+                10,
+                60
+              ],
+              "discrete_days": [
+                10,
+                12,
+                30,
+                55
+              ],
+              "items": []
+            }
+          ]
+        },
+        "harvesting": {
+          "stage_number": 9,
+          "stage_name": "Harvesting",
+          "tasks": [
+            {
+              "task_name": "Physiological Maturity and Harvest Timing",
+              "timing": "SAMPLE: 85–95 days after sowing for most Kharif hybrids; when husks are dry and brown, and black layer visible at grain base",
+              "purpose": "Harvest at correct stage to maximise dry grain yield, minimise field and storage losses, and meet market moisture specifications.",
+              "instructions": [
+                "1. Check for black layer (physiological maturity) by peeling back husk; cut a grain — if black/brown layer is present at the tip, crop is mature.",
+                "2. Husk should be dry, papery; grain hard; plant leaves dried.",
+                "3. Measure grain moisture: SAMPLE 18–25 % at harvest is typical; field-dry or mechanically dry to SAMPLE ≤14 % before storage.",
+                "4. Harvest by hand-picking cobs, or use combine with maize head attachment.",
+                "5. Shell cobs with a sheller or by hand; clean grain."
+              ],
+              "materials": [
+                {
+                  "item": "Grain moisture meter",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "instrument",
+                  "note": null
+                },
+                {
+                  "item": "Maize sheller (hired)",
+                  "quantity": "SAMPLE: 1",
+                  "unit": "machine",
+                  "note": null
+                }
+              ],
+              "frequency": "Once per season",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹800 – ₹1,800",
+                "currency": "INR",
+                "per": "acre (harvesting + shelling + drying)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Keep hands away from rotating maize sheller drum.",
+                "Ear protection near power sheller.",
+                "Dust mask during shelling."
+              ],
+              "information_source": "ICAR-IIMR Hyderabad. CFMTTI Budni. FAO post-harvest maize guidelines (sample references).",
+              "start_day": 85,
+              "end_day": 92,
+              "day_range": [
+                85,
+                92
+              ],
+              "items": [
+                {
+                  "name": "De-husking, cob harvesting & mechanical shelling contract",
+                  "rate_per_acre": 1.0,
+                  "unit": "acre",
+                  "price_per_unit": 1800.0,
+                  "price_type": "ESTIMATED_CHC_TARIFF",
+                  "category": "harvesting",
+                  "source": "Maize Processing & Harvester Union tariff"
+                }
+              ]
+            }
+          ]
+        },
+        "post_harvest_handling": {
+          "stage_number": 10,
+          "stage_name": "Post-Harvest Handling",
+          "tasks": [
+            {
+              "task_name": "Drying, Cleaning and Storage",
+              "timing": "Within 2–3 days of shelling",
+              "purpose": "Dry grain to safe moisture; clean to remove chaff and broken kernels; store to prevent aflatoxin and insect damage.",
+              "instructions": [
+                "1. Spread shelled maize grain on clean tarpaulin; sun-dry to SAMPLE ≤14 % moisture (≤12 % for long storage).",
+                "2. Clean through grain cleaner to remove chaff, dust and broken kernels.",
+                "3. Store in clean, dry HDPE bags on pallets in a ventilated, rodent-proof godown.",
+                "4. Apply CIBRC-registered grain protectant if extended storage is planned (SAMPLE category: same as wheat storage — verify for maize).",
+                "5. Monitor monthly: check moisture, inspect for weevils, mould or rodent activity."
+              ],
+              "materials": [
+                {
+                  "item": "Clean tarpaulin, grain cleaner, moisture meter",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "tools",
+                  "note": null
+                },
+                {
+                  "item": "HDPE bags, grain protectant",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "units / per label",
+                  "note": "SAMPLE"
+                }
+              ],
+              "frequency": "Initial + monthly monitoring",
+              "application_method": "Sun-drying; dust admixture for protectant; fumigation by licensed operator",
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹300 – ₹700",
+                "currency": "INR",
+                "per": "quintal (drying + bags + protectant)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Maize is highly susceptible to aflatoxin contamination above SAMPLE 14 % moisture — do NOT store moist grain.",
+                "Fumigation only by licensed operator.",
+                "Keep storage chemicals away from food and children."
+              ],
+              "information_source": "FAO. ICAR-CIAE. CWC grain storage guidelines. FSSAI aflatoxin limits for maize (sample references).",
+              "start_day": 90,
+              "end_day": 95,
+              "day_range": [
+                90,
+                95
+              ],
+              "items": [
+                {
+                  "name": "Packaging storage bags (50 kg HDPE woven bags)",
+                  "rate_per_acre": 50.0,
+                  "unit": "bags",
+                  "price_per_unit": 28.0,
+                  "price_type": "BENCHMARK",
+                  "category": "other",
+                  "source": "Packaging Industry Benchmark (25 qtl yield * 2 bags/qtl)"
+                },
+                {
+                  "name": "Agricultural Labour (Bag filling, stitching & stacking)",
+                  "rate_per_acre": 1.0,
+                  "unit": "worker-day",
+                  "price_per_unit": 375.0,
+                  "price_type": "STATUTORY_MINIMUM_WAGE",
+                  "category": "labour",
+                  "source": "Ministry of Labour & Employment, Agricultural Minimum Wages"
+                }
+              ]
+            }
+          ]
+        },
+        "selling_produce": {
+          "stage_number": 11,
+          "stage_name": "Selling the Produce",
+          "tasks": [
+            {
+              "task_name": "Market Channels for Maize",
+              "timing": "Post-harvest; monitor prices from 2–4 weeks before harvest",
+              "purpose": "Identify the most profitable channel among mandi, processors (starch, ethanol, poultry feed), FPO aggregation, or e-NAM.",
+              "instructions": [
+                "1. Check current MSP for maize on CACP/DAFPW website.",
+                "2. Contact local poultry feed mills, starch processors or ethanol plants for farm-gate purchase prices (often above APMC rates for high-quality grain).",
+                "3. List on e-NAM for transparent price discovery.",
+                "4. Ensure grain moisture ≤SAMPLE 14 % and aflatoxin level below FSSAI/buyer limits — get grain tested if in doubt."
+              ],
+              "materials": [
+                {
+                  "item": "Smartphone, documents, calibrated weighing scale",
+                  "quantity": "SAMPLE: as required",
+                  "unit": "set",
+                  "note": null
+                }
+              ],
+              "frequency": "Ongoing; sell in lots when price is favourable",
+              "application_method": null,
+              "estimated_cost": {
+                "amount": "SAMPLE: ₹80 – ₹300",
+                "currency": "INR",
+                "per": "quintal (transport + mandi charges)",
+                "note": "SAMPLE RATE"
+              },
+              "safety_precautions": [
+                "Do not sell grain with visible mould — buyer rejection and reputational risk.",
+                "Carry all identity and land documents for MSP procurement."
+              ],
+              "information_source": "CACP. Agmarknet. eNAM. FSSAI aflatoxin standards. State APMC rules (sample references).",
+              "start_day": 75,
+              "end_day": 105,
+              "day_range": [
+                75,
+                105
+              ],
+              "items": [
+                {
+                  "name": "Mandi transport & loading charges",
+                  "rate_per_acre": 25.0,
+                  "unit": "quintal",
+                  "price_per_unit": 15.0,
+                  "price_type": "BENCHMARK",
+                  "category": "other",
+                  "source": "APMC Mandi Transport tariff"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "cost_per_acre": 7000,
+      "yield_per_acre": 25,
+      "price_per_quintal": 1962,
+      "tips": "Top-dress with nitrogen fertilizer at knee-high stage."
+    }
+  ]
+}
